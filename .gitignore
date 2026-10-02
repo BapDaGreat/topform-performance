@@ -28,3 +28,26 @@ Thumbs.db
 node_modules/
 dist/
 *.tsbuildinfo
+
+# Local scratch and non-web workspace tools
+scratch/
+trading_engine/
+freight_ml_assessment/
+config.coins_pro_micro.yaml
+config.example.yaml
+requirements.txt
+dayle-angelo-pena-resume.pdf
+contact.html
+createLucideIcon.js
+github.js
+index-BR.js
+index.formatted.js
+index.js
+send.js
+site.html
+/index.css
+skills-lock.json
+.codex/
+.agents/
+.impeccable/
+tests/
