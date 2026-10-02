@@ -162,3 +162,47 @@ dialog::backdrop {
     transition: none !important;
   }
 }
+
+/* ==========================================================================
+   TOPFORM FIGMA REPRODUCTION STYLES
+   ========================================================================== */
+.tf-figma-card {
+  background-color: #0c0e12;
+  background-image: radial-gradient(ellipse at 85% 15%, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Dedicated Blue Performance State Card — where color intentionally arrives */
+.tf-blue-state-card {
+  background-color: #0b121a;
+  background-image: radial-gradient(ellipse at 85% 15%, rgba(34, 197, 254, 0.08) 0%, transparent 70%);
+  border: 1px solid rgba(34, 197, 254, 0.28);
+  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.85), inset 0 1px 0 0 rgba(34, 197, 254, 0.2);
+}
+
+.tf-figma-card-highlight {
+  background-color: #0e131d;
+  background-image: radial-gradient(ellipse at 85% 15%, rgba(34, 197, 254, 0.08) 0%, transparent 70%);
+  border: 1px solid rgba(34, 197, 254, 0.28);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), inset 0 1px 0 0 rgba(34, 197, 254, 0.18);
+}
+
+.tf-figma-btn {
+  background-color: #141720;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tf-figma-btn:hover {
+  background-color: #1c212e;
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.tf-dot-pulse {
+  box-shadow: 0 0 10px #22c5fe, 0 0 20px rgba(34, 197, 254, 0.5);
+}
+
