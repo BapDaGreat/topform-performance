@@ -104,7 +104,7 @@ const WorkWithMarkButton: React.FC<{
         <span>Work with Mark</span>
         <span className="w-2 h-2 rounded-full bg-[#22c5fe] tf-dot-pulse inline-block shrink-0" />
       </a>
-      <span className="text-[13px] text-zinc-400 font-normal">
+      <span className="text-[13px] text-zinc-300 font-normal">
         Opens a private WhatsApp conversation with Mark.
       </span>
     </div>
@@ -328,7 +328,7 @@ export const TopformSite: React.FC = () => {
               </div>
             </div>
 
-            <p className="text-zinc-400 text-[16px] sm:text-[18px] leading-relaxed mt-6">
+            <p className="text-zinc-300 text-[16px] sm:text-[18px] leading-relaxed mt-6">
               Private 1-to-1 performance coaching and bespoke Off-Pitch Training for professional footballers.
             </p>
 
@@ -342,7 +342,7 @@ export const TopformSite: React.FC = () => {
                 <span>Work with Mark</span>
                 <span className="w-2 h-2 rounded-full bg-[#22c5fe] tf-dot-pulse inline-block shrink-0" />
               </a>
-              <span className="text-[13px] text-zinc-400 font-normal">
+              <span className="text-[13px] text-zinc-300 font-normal">
                 Opens a private WhatsApp conversation with Mark.
               </span>
             </div>
@@ -389,7 +389,7 @@ export const TopformSite: React.FC = () => {
                 <h3 className="text-2xl font-bold text-white mb-4 leading-snug">
                   Keep developing the football you have.
                 </h3>
-                <p className="text-[15px] sm:text-[16px] text-zinc-400 leading-relaxed mb-3">
+                <p className="text-[15px] sm:text-[16px] text-zinc-300 leading-relaxed mb-3">
                   There's always something you can get better at.
                 </p>
                 <p className="text-[15px] sm:text-[16px] text-white font-medium leading-relaxed mb-4">
@@ -402,7 +402,7 @@ export const TopformSite: React.FC = () => {
 
               {/* Bottom Divider & Left-Aligned Kicker */}
               <div className="mt-20 pt-12 border-t border-white/[0.08] text-left">
-                <p className="text-zinc-400 text-base sm:text-lg">
+                <p className="text-zinc-300 text-base sm:text-lg">
                   Play at your best. <strong className="text-white font-bold">Make your best better. Keep doing both.</strong>
                 </p>
               </div>
@@ -477,7 +477,7 @@ export const TopformSite: React.FC = () => {
                     Because what if we can make your best even better?
                   </h3>
 
-                  <p className="text-zinc-400 text-[15px] sm:text-[16px] leading-relaxed">
+                  <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
                     No matter how well you're playing, there's always something you can get better at.
                   </p>
 
@@ -532,10 +532,10 @@ export const TopformSite: React.FC = () => {
                 <div className="space-y-3 text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
                   <p>Your Red Brain isn't something we're trying to get rid of.</p>
                   <p className="text-white font-semibold">But we don't want it in control.</p>
-                  <p className="text-zinc-400">
+                  <p className="text-zinc-300">
                     Left in control, anger can become frustration. Nerves can become anxiety. Thinking can become overthinking. Pressure can make you rush, hesitate, force things or play safe.
                   </p>
-                  <p className="text-zinc-400">
+                  <p className="text-zinc-300">
                     But those same raw ingredients can be incredibly useful when they're controlled in the right way.
                   </p>
                 </div>
@@ -546,23 +546,23 @@ export const TopformSite: React.FC = () => {
                 <h3 className="text-2xl font-bold text-white">Green Brain</h3>
                 <div className="space-y-3 text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
                   <p>This is where your Green Brain comes in.</p>
-                  <p className="text-zinc-400">
+                  <p className="text-zinc-300">
                     Your Green Brain keeps you present and puts your attention onto the things you can control.
                   </p>
-                  <p className="text-zinc-400">
+                  <p className="text-zinc-300">
                     And rather than allowing Red Brain to take over, Green Brain takes control of what Red Brain gives you.
                   </p>
                   <div className="space-y-2 py-2 border-y border-white/[0.06] my-2 text-zinc-300 text-[15px]">
                     <p className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-500 shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 shrink-0" />
                       <span>Anger can become aggression and intensity.</span>
                     </p>
                     <p className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-500 shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 shrink-0" />
                       <span>Nerves and anxiety can become sharpness, awareness and energy.</span>
                     </p>
                   </div>
-                  <p className="text-zinc-400">
+                  <p className="text-zinc-300">
                     You're not trying to become emotionless or completely calm.
                   </p>
                   <p className="text-white font-semibold">
@@ -590,26 +590,55 @@ export const TopformSite: React.FC = () => {
                 </p>
               </div>
             </div>
+          </div>
+        </section>
 
-            {/* Brentford Player Kevin Schade — Fitted to exact pixel aspect ratio (694x1024) */}
-            <div className="max-w-[460px] sm:max-w-[520px] mx-auto relative pt-8">
-              <div className="relative overflow-hidden rounded-2xl">
-                <img
-                  src="/assets/topform-kevin-celebration.jpg"
-                  alt="Kevin Schade — Brentford FC"
-                  className="w-full h-auto block object-contain filter contrast-105 brightness-100"
-                  loading="lazy"
-                />
-                <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#000000] via-[#000000]/75 to-transparent pointer-events-none" />
+        {/* ===================================================================
+            04B | FABIO CARVALHO TESTIMONIAL & PROOF
+            Immediately follows Red/Green/Blue content.
+            Monochrome image on one side and large quote treatment on the other.
+           =================================================================== */}
+        <section id="fabio-proof" className="py-24 sm:py-32 bg-[#000000] border-b border-white/[0.08] overflow-hidden">
+          <div className="max-w-[1200px] mx-auto px-6 sm:px-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+              {/* Image Left */}
+              <div className="lg:col-span-5 flex justify-center lg:justify-start">
+                <div className="relative overflow-hidden rounded-2xl max-w-[440px] border border-white/[0.12] shadow-2xl bg-zinc-950">
+                  <img
+                    src="/assets/topform-kevin-celebration.jpg"
+                    alt="Fabio Carvalho"
+                    className="w-full h-auto block object-cover filter contrast-105 brightness-100"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#000000] via-[#000000]/65 to-transparent pointer-events-none" />
+                </div>
+              </div>
+
+              {/* Quote Right */}
+              <div className="lg:col-span-7 space-y-6 text-left">
+                <h2 className="text-white font-black tracking-tight text-[clamp(2.1rem,4.8vw,3.6rem)] uppercase leading-[1.08]">
+                  &ldquo;PLAYING CONSISTENTLY IN MY <span className="text-[#22c5fe]">BLUE PERFORMANCE STATE</span>.&rdquo;
+                </h2>
+
+                <div className="space-y-4 text-zinc-300 text-base sm:text-lg lg:text-[19px] leading-relaxed font-normal max-w-xl">
+                  <p>
+                    &ldquo;He's helped me to approach training sessions and matches by being able to bounce back quickly from mistakes and playing consistently in my Blue Performance State.&rdquo;
+                  </p>
+                  <p>
+                    &ldquo;Helping me to keep going and continue trying new things and risking things.&rdquo;
+                  </p>
+                </div>
+
+                <div className="pt-2">
+                  <p className="text-white font-bold text-base sm:text-lg">
+                    Fabio Carvalho
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ===================================================================
-            05 | BESPOKE OFF-PITCH TRAINING (Positions)
-            Matches Figma (above_gap3_2.png, above_gap3_3.png, scan_slice_01.png)
-           =================================================================== */}
         {/* ===================================================================
             05 | BESPOKE OFF-PITCH TRAINING (Positions)
             Matches Figma (above_gap3_2.png, above_gap3_3.png, scan_slice_01.png)
@@ -625,10 +654,10 @@ export const TopformSite: React.FC = () => {
               <p className="text-white font-semibold text-lg">
                 There's only so much physical training you can do.
               </p>
-              <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+              <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
                 Your club controls your training load. You have matches to play, recovery to manage and a body that needs to be ready to perform.
               </p>
-              <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+              <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
                 But that doesn't mean you have to stop working on your game.
               </p>
               <p className="text-white font-semibold text-sm sm:text-base">
@@ -645,7 +674,7 @@ export const TopformSite: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
                 {/* 01 / STRIKERS */}
                 <div className="tf-figma-card rounded-2xl p-6 sm:p-8 space-y-4">
-                  <p className="text-xs text-zinc-500 font-semibold tracking-wider">
+                  <p className="text-xs text-zinc-400 font-semibold tracking-wider">
                     01 / STRIKERS
                   </p>
                   <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
@@ -655,7 +684,7 @@ export const TopformSite: React.FC = () => {
 
                 {/* 02 / MIDFIELDERS */}
                 <div className="tf-figma-card rounded-2xl p-6 sm:p-8 space-y-4">
-                  <p className="text-xs text-zinc-500 font-semibold tracking-wider">
+                  <p className="text-xs text-zinc-400 font-semibold tracking-wider">
                     02 / MIDFIELDERS
                   </p>
                   <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
@@ -665,7 +694,7 @@ export const TopformSite: React.FC = () => {
 
                 {/* 03 / DEFENDERS */}
                 <div className="tf-figma-card rounded-2xl p-6 sm:p-8 space-y-4">
-                  <p className="text-xs text-zinc-500 font-semibold tracking-wider">
+                  <p className="text-xs text-zinc-400 font-semibold tracking-wider">
                     03 / DEFENDERS
                   </p>
                   <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
@@ -676,7 +705,7 @@ export const TopformSite: React.FC = () => {
 
               {/* Kicker Below Cards */}
               <div className="mt-12 text-left max-w-xl mx-auto md:max-w-none">
-                <p className="text-zinc-400 text-base sm:text-lg">
+                <p className="text-zinc-300 text-base sm:text-lg">
                   And next week it could be something completely different. <strong className="text-white font-bold">Because the work changes as your football changes.</strong>
                 </p>
               </div>
@@ -728,7 +757,7 @@ export const TopformSite: React.FC = () => {
               <h2 className="text-white font-bold text-[clamp(2.2rem,4.5vw,3.2rem)] leading-tight mb-4">
                 Your football decides<br />what we work on.
               </h2>
-              <p className="text-zinc-400 text-base sm:text-lg">
+              <p className="text-zinc-300 text-base sm:text-lg">
                 Every time we work together, we look at what's actually happening in your football.
               </p>
             </div>
@@ -831,16 +860,13 @@ export const TopformSite: React.FC = () => {
 
         {/* ===================================================================
             10 | WHERE THEY STARTED. WHERE THEIR FOOTBALL TOOK THEM
-            Matches Figma (scan_slice_08.png - scan_slice_14.png)
-           =================================================================== */}
-        {/* ===================================================================
-            10 | WHERE THEY STARTED. WHERE THEIR FOOTBALL TOOK THEM
-            Matches Figma (scan_slice_08.png - scan_slice_14.png)
+            Editorial Layout with dynamic visual rhythm, alternating alignment,
+            large architectural numerals, and 2-column comparative split.
            =================================================================== */}
         <section id="career-journeys" className="py-24 sm:py-32 bg-[#000000] border-b border-white/[0.08]">
-          <div className="max-w-[720px] mx-auto px-4 sm:px-8 space-y-12">
-            <div className="text-left space-y-4">
-              <h2 className="text-white font-bold text-[clamp(2.2rem,4.8vw,3.5rem)] leading-tight">
+          <div className="max-w-[1140px] mx-auto px-6 sm:px-10 lg:px-12">
+            <div className="text-left space-y-4 max-w-2xl mb-14 sm:mb-20">
+              <h2 className="text-white font-bold text-[clamp(2.2rem,4.8vw,3.6rem)] leading-tight">
                 Where they started.<br />
                 Where their<br />
                 football took them.
@@ -848,70 +874,89 @@ export const TopformSite: React.FC = () => {
               <p className="text-white font-semibold text-base sm:text-lg">
                 Every player's journey is different.
               </p>
-              <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+              <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
                 The following players came to me at very different points in their careers, with very different challenges.
               </p>
-              <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+              <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
                 This is where they were when we started working together — and where their careers went next.
               </p>
             </div>
 
-            {/* 4 Stacked Figma Cards */}
-            <div className="space-y-8">
-              {CASE_STUDIES.map((study) => (
-                <div
-                  key={study.number}
-                  className="tf-figma-card rounded-2xl p-8 sm:p-10 space-y-6 relative overflow-hidden"
-                >
-                  <p className="text-xs text-zinc-500 font-bold tracking-wider">
-                    {study.number}
-                  </p>
+            {/* Alternating Editorial Stories with Large Numerals */}
+            <div className="space-y-10 sm:space-y-12">
+              {CASE_STUDIES.map((study, idx) => {
+                const isEven = idx % 2 === 1;
+                return (
+                  <div
+                    key={study.number}
+                    className={`tf-figma-card rounded-2xl p-8 sm:p-10 lg:p-12 relative overflow-hidden transition-all duration-300 hover:border-white/20 ${
+                      isEven ? 'lg:ml-auto lg:max-w-[980px]' : 'lg:mr-auto lg:max-w-[980px]'
+                    }`}
+                  >
+                    {/* Architectural Large Numeral & Category Label Header */}
+                    <div className="flex items-start justify-between gap-4 mb-4">
+                      <div className="flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
+                        <span className="text-xs text-zinc-400 font-bold tracking-[0.18em] uppercase">
+                          CASE STORY / {study.number}
+                        </span>
+                      </div>
+                      <span className="text-4xl sm:text-5xl lg:text-6xl font-extralight text-white/[0.14] select-none tracking-tight leading-none font-mono">
+                        {study.number}
+                      </span>
+                    </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold text-white uppercase leading-snug tracking-tight">
-                    {study.title}
-                  </h3>
+                    <h3 className="text-xl sm:text-2xl lg:text-[25px] font-bold text-white uppercase leading-snug tracking-tight mb-8">
+                      {study.title}
+                    </h3>
 
-                  <div className="space-y-4 pt-2">
-                    <div>
-                      <p className="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-2">
-                        WHEN WE STARTED WORKING TOGETHER
-                      </p>
-                      <div className="space-y-2">
-                        {study.startedParagraphs.map((p, idx) => (
-                          <p key={idx} className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
-                            {p}
-                          </p>
-                        ))}
+                    {/* Editorial 2-Column Comparative Split on Desktop */}
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 pt-6 border-t border-white/[0.08]">
+                      {/* Left: Started */}
+                      <div className="md:col-span-5 space-y-3 text-left">
+                        <p className="text-xs font-semibold text-zinc-400 uppercase tracking-[0.14em]">
+                          WHEN WE STARTED WORKING TOGETHER
+                        </p>
+                        <div className="space-y-2.5">
+                          {study.startedParagraphs.map((p, pIdx) => (
+                            <p key={pIdx} className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+                              {p}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Right: Where career went */}
+                      <div className="md:col-span-7 space-y-3 text-left md:border-l md:border-white/[0.08] md:pl-8 lg:pl-10">
+                        <p className="text-xs font-semibold text-zinc-400 uppercase tracking-[0.14em]">
+                          WHERE HIS CAREER WENT
+                        </p>
+                        <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+                          {study.wentIntro}
+                        </p>
+                        {study.wentBullets && (
+                          <div className="space-y-2 mt-2">
+                            {study.wentBullets.map((b) => (
+                              <div key={b} className="flex items-center gap-2.5">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
+                                <span className="text-white text-[15px] sm:text-[16px] font-medium">{b}</span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </div>
 
-                    <div className="pt-2">
-                      <p className="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-2">
-                        WHERE HIS CAREER WENT
+                    {/* Takeaway / Summary Bar */}
+                    <div className="pt-6 mt-6 border-t border-white/[0.08] flex items-start sm:items-center gap-3">
+                      <span className="w-1 h-5 rounded-full bg-[#22c5fe]/80 shrink-0 mt-0.5 sm:mt-0" />
+                      <p className="text-white font-semibold text-[15px] sm:text-[16px] leading-relaxed">
+                        {study.summary}
                       </p>
-                      <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
-                        {study.wentIntro}
-                      </p>
-                      {study.wentBullets && (
-                        <div className="space-y-1.5 mt-2 pl-1">
-                          {study.wentBullets.map((b) => (
-                            <div key={b} className="flex items-center gap-2.5">
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
-                              <span className="text-zinc-200 text-[15px] font-medium">{b}</span>
-                            </div>
-                          ))}
-                        </div>
-                      )}
                     </div>
                   </div>
-
-                  <div className="pt-6 border-t border-white/[0.08]">
-                    <p className="text-white font-semibold text-[15px] sm:text-[16px] leading-relaxed">
-                      {study.summary}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
@@ -1073,7 +1118,7 @@ export const TopformSite: React.FC = () => {
               <p>You've spent years building your game.</p>
               <p className="text-white font-semibold">There's the player you are today.</p>
               <p className="text-white font-semibold">And there's the player you can still become.</p>
-              <p className="text-zinc-400 pt-2 text-[15px] sm:text-[16px]">
+              <p className="text-zinc-300 pt-2 text-[15px] sm:text-[16px]">
                 TOPFORM is built to help you get the best from both.
               </p>
             </div>
@@ -1096,7 +1141,7 @@ export const TopformSite: React.FC = () => {
           FOOTER — Matches Figma (scan_slice_20.png)
           Full-width cyan/blue hairline accent border + brand info + contact
          ===================================================================== */}
-      <footer className="bg-[#000000] border-t border-[#0099FF] py-12 px-6 sm:px-12 text-zinc-400 text-xs">
+      <footer className="bg-[#000000] border-t border-[#0099FF] py-12 px-6 sm:px-12 text-zinc-300 text-xs">
         <div className="max-w-[1240px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3.5">
             <img
@@ -1112,7 +1157,7 @@ export const TopformSite: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:items-end text-center sm:text-right gap-1 text-[13px] text-zinc-400 font-normal">
+          <div className="flex flex-col sm:items-end text-center sm:text-right gap-1 text-[13px] text-zinc-300 font-normal">
             <p className="text-white font-semibold text-[13px]">Mark Bowden</p>
             <p>
               07575 203332 ·{' '}
