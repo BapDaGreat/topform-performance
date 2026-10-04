@@ -8,6 +8,16 @@ const WHATSAPP_URL =
 const BIM_VIMEO_EMBED_URL =
   'https://player.vimeo.com/video/1230904160?h=26a94e858b&app_id=122963&dnt=1&autoplay=0&muted=1&loop=1&autopause=0&controls=1&title=0&byline=0&portrait=0&color=22c5fe';
 
+/**
+ * Resolves static assets cleanly across both local dev (/) and GitHub Pages (/topform-performance/)
+ */
+const getAssetUrl = (assetPath: string): string => {
+  const base = import.meta.env.BASE_URL || '/';
+  const normalizedBase = base.endsWith('/') ? base : `${base}/`;
+  const cleanPath = assetPath.startsWith('/') ? assetPath.slice(1) : assetPath;
+  return `${normalizedBase}${cleanPath}`;
+};
+
 interface CaseStudy {
   number: string;
   title: string;
@@ -270,7 +280,7 @@ export const TopformSite: React.FC = () => {
         <div className="max-w-[1240px] mx-auto flex items-center justify-between gap-3">
           <a href="#top" className="flex items-center gap-3 sm:gap-3.5 group min-w-0">
             <img
-              src="/assets/topform-roundel-white.png"
+              src={getAssetUrl('/assets/topform-roundel-white.png')}
               alt="TOPFORM"
               className="w-8 h-8 sm:w-9 sm:h-9 object-contain shrink-0"
             />
@@ -305,7 +315,7 @@ export const TopformSite: React.FC = () => {
           {/* Full-bleed monochrome picture expanding to fill the screen without cropping */}
           <div className="w-full relative overflow-hidden">
             <img
-              src="/assets/topform-players-bw.jpg"
+              src={getAssetUrl('/assets/topform-players-bw.jpg')}
               alt="Professional footballers working with Mark Bowden"
               className="w-full h-auto block object-cover sm:object-cover object-top max-h-[820px]"
               fetchPriority="high"
@@ -328,7 +338,7 @@ export const TopformSite: React.FC = () => {
               <div className="tf-figma-card rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 sm:gap-7 items-center sm:items-start">
                 <div className="relative shrink-0 w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 aspect-square rounded-xl overflow-hidden border border-white/10 shadow-2xl mx-auto sm:mx-0">
                   <img
-                    src="/assets/topform-reiss-nelson.jpg"
+                    src={getAssetUrl('/assets/topform-reiss-nelson.jpg')}
                     alt="Reiss Nelson"
                     className="w-full h-full object-cover object-center filter contrast-105"
                   />
@@ -431,7 +441,7 @@ export const TopformSite: React.FC = () => {
               <div className="lg:col-span-5 flex justify-center lg:justify-start items-center lg:items-stretch">
                 <div className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-none lg:h-full rounded-2xl overflow-hidden bg-zinc-950 border border-white/[0.08] shadow-2xl flex items-center justify-center mx-auto lg:mx-0">
                   <img
-                    src="/assets/topform-portrait-cover.jpg"
+                    src={getAssetUrl('/assets/topform-portrait-cover.jpg')}
                     alt="Professional footballer looking into camera"
                     className="w-full h-auto max-h-[680px] lg:max-h-none lg:h-full block object-contain lg:object-cover filter contrast-105 brightness-100"
                     loading="lazy"
@@ -614,7 +624,7 @@ export const TopformSite: React.FC = () => {
               <div className="lg:col-span-5 flex justify-center lg:justify-start">
                 <div className="relative overflow-hidden rounded-2xl max-w-[440px] border border-white/[0.12] shadow-2xl bg-zinc-950 mx-auto lg:mx-0">
                   <img
-                    src="/assets/topform-kevin-celebration.jpg"
+                    src={getAssetUrl('/assets/topform-kevin-celebration.jpg')}
                     alt="Fabio Carvalho"
                     className="w-full h-auto block object-contain sm:object-cover filter contrast-105 brightness-100"
                     loading="lazy"
@@ -855,7 +865,7 @@ export const TopformSite: React.FC = () => {
               <div className="lg:col-span-5 flex justify-center lg:justify-end">
                 <div className="relative overflow-hidden rounded-2xl max-w-[480px] border border-white/[0.10] shadow-2xl bg-zinc-950 mx-auto lg:mx-0">
                   <img
-                    src="/assets/topform-emiliano-bournemouth-bw.jpg"
+                    src={getAssetUrl('/assets/topform-emiliano-bournemouth-bw.jpg')}
                     alt="Emiliano Marcondes celebrating — AFC Bournemouth"
                     className="w-full h-auto block object-contain sm:object-cover filter contrast-105 brightness-100"
                     loading="lazy"
@@ -998,7 +1008,7 @@ export const TopformSite: React.FC = () => {
               {/* Founder Profile Badge (scan_slice_15.png) */}
               <div className="pt-6 flex items-center gap-4">
                 <img
-                  src="/assets/topform-mark-bowden.jpg"
+                  src={getAssetUrl('/assets/topform-mark-bowden.jpg')}
                   alt="Mark Bowden"
                   className="w-12 h-12 rounded object-cover border border-white/10"
                 />
@@ -1097,7 +1107,7 @@ export const TopformSite: React.FC = () => {
             {/* Centered Brand Roundel Logo */}
             <div className="flex flex-col items-center">
               <img
-                src="/assets/topform-roundel-white.png"
+                src={getAssetUrl('/assets/topform-roundel-white.png')}
                 alt="TOPFORM"
                 className="w-14 h-14 object-contain mb-3"
               />
@@ -1144,7 +1154,7 @@ export const TopformSite: React.FC = () => {
         <div className="max-w-[1240px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3.5">
             <img
-              src="/assets/topform-roundel-white.png"
+              src={getAssetUrl('/assets/topform-roundel-white.png')}
               alt="TOPFORM"
               className="w-8 h-8 object-contain"
             />

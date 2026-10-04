@@ -5,7 +5,7 @@ import fs from 'fs';
 import path from 'path';
 
 export default defineConfig({
-  base: './',
+  base: process.env.NODE_ENV === 'production' ? '/topform-performance/' : '/',
   plugins: [
     react(),
     tailwindcss(),
