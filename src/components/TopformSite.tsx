@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Volume2, VolumeX, X } from 'lucide-react';
 import Player from '@vimeo/player';
 import { motion } from 'motion/react';
-import { BluePerformanceState3D } from './BluePerformanceState3D';
-import { InteractiveHero3D } from './InteractiveHero3D';
 import { Tilt3DCard } from './Tilt3DCard';
 
 const WHATSAPP_URL =
@@ -331,11 +329,6 @@ export const TopformSite: React.FC = () => {
             <div className="absolute inset-x-0 bottom-0 h-16 sm:h-36 md:h-56 bg-gradient-to-t from-[#000000] via-[#000000]/60 to-transparent pointer-events-none" />
           </div>
 
-          {/* Interactive 3D Ambient Kinetic Mesh in Hero Space */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/4 w-full lg:w-[640px] h-[440px] lg:h-[600px] opacity-30 pointer-events-none z-0 hidden sm:block">
-            <InteractiveHero3D />
-          </div>
-
           {/* Centered Editorial Hero Content Block — Pure Typography & Restraint */}
           <div className="max-w-[680px] mx-auto px-4 pt-8 sm:pt-12 text-left relative z-10">
             <motion.div
@@ -650,42 +643,32 @@ export const TopformSite: React.FC = () => {
                 </Tilt3DCard>
               </motion.div>
 
-              {/* Blue Performance State — The Arrival of Color with Interactive 3D Flow Orb */}
+              {/* Blue Performance State — The Arrival of Color */}
               <motion.div
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+                transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               >
-                <div className="tf-blue-state-card rounded-2xl p-7 sm:p-11 relative overflow-hidden">
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-                    <div className="lg:col-span-7 space-y-5 text-left">
-                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0099ff]/15 border border-[#0099ff]/30 text-[#22c5fe] text-xs font-bold tracking-wider uppercase">
-                        <span>03 &mdash; Flow State</span>
-                      </div>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-[#22c5fe] tracking-tight">
-                        Blue Performance State
-                      </h3>
-                      <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
-                        When Green Brain is in control and those raw ingredients from Red Brain are working for you rather than against you, you create your <strong className="text-white font-bold">Blue Performance State</strong>.
-                      </p>
-                      <p className="text-white font-bold text-[16px] sm:text-[17px] leading-relaxed pt-1">
-                        Your mind is clear. You're present.
-                      </p>
-                      <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
-                        You're seeing, reacting and deciding rather than consciously trying to control your football.
-                      </p>
-                      <p className="text-[#22c5fe] font-black text-2xl sm:text-3xl pt-2 tracking-tight">
-                        Your football takes over.
-                      </p>
-                    </div>
-
-                    {/* Interactive 3D Blue Performance State Flow Orb */}
-                    <div className="lg:col-span-5 flex justify-center items-center">
-                      <BluePerformanceState3D />
-                    </div>
+                <Tilt3DCard maxTilt={3} className="rounded-2xl">
+                  <div className="tf-blue-state-card rounded-2xl p-7 sm:p-11 space-y-5 relative overflow-hidden">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-[#22c5fe] tracking-tight">
+                      Blue Performance State
+                    </h3>
+                    <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
+                      When Green Brain is in control and those raw ingredients from Red Brain are working for you rather than against you, you create your <strong className="text-white font-bold">Blue Performance State</strong>.
+                    </p>
+                    <p className="text-white font-bold text-[16px] sm:text-[17px] leading-relaxed pt-1">
+                      Your mind is clear. You're present.
+                    </p>
+                    <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
+                      You're seeing, reacting and deciding rather than consciously trying to control your football.
+                    </p>
+                    <p className="text-[#22c5fe] font-black text-2xl sm:text-3xl pt-2 tracking-tight">
+                      Your football takes over.
+                    </p>
                   </div>
-                </div>
+                </Tilt3DCard>
               </motion.div>
             </div>
           </div>
