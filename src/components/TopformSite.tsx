@@ -199,7 +199,7 @@ const BimPeppleVideoPlayer: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full max-w-[320px] sm:max-w-[360px] aspect-[9/16] rounded-2xl overflow-hidden bg-black border border-white/[0.12] shadow-2xl tf-figma-card group"
+      className="relative w-full max-w-[320px] sm:max-w-[360px] aspect-[9/16] rounded-2xl overflow-hidden bg-black border border-white/[0.12] shadow-2xl tf-figma-card group mx-auto lg:mx-0"
     >
       <iframe
         ref={iframeRef}
@@ -326,8 +326,8 @@ export const TopformSite: React.FC = () => {
 
             {/* Reiss Nelson Testimonial Feature — Quiet, Tactile Panel */}
             <div className="my-10">
-              <div className="tf-figma-card rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 sm:gap-7 items-start">
-                <div className="relative shrink-0 w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 aspect-square rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+              <div className="tf-figma-card rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 sm:gap-7 items-center sm:items-start">
+                <div className="relative shrink-0 w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 aspect-square rounded-xl overflow-hidden border border-white/10 shadow-2xl mx-auto sm:mx-0">
                   <img
                     src="/assets/topform-reiss-nelson.jpg"
                     alt="Reiss Nelson"
@@ -377,7 +377,7 @@ export const TopformSite: React.FC = () => {
             <div className="relative">
               {/* Card 01 — Left Aligned */}
               <div
-                className="tf-figma-card rounded-2xl p-7 sm:p-10 w-[calc(100%-16px)] sm:w-full max-w-[500px] mr-auto transition-all duration-300 relative z-10 hover:border-white/20"
+                className="tf-figma-card rounded-2xl p-7 sm:p-10 w-full max-w-[500px] mr-auto transition-all duration-300 relative z-10 hover:border-white/20"
               >
                 <p className="text-xs text-zinc-300 font-bold tracking-wider mb-4">01</p>
                 <h3 className="text-2xl font-bold text-white mb-4 leading-snug">
@@ -393,7 +393,7 @@ export const TopformSite: React.FC = () => {
 
               {/* Card 02 — Right Aligned & Staggered */}
               <div
-                className="tf-figma-card rounded-2xl p-7 sm:p-10 w-[calc(100%-16px)] sm:w-full max-w-[500px] ml-auto mt-8 lg:-mt-12 transition-all duration-300 relative z-20 hover:border-white/20"
+                className="tf-figma-card rounded-2xl p-7 sm:p-10 w-full max-w-[500px] ml-auto mt-8 lg:-mt-12 transition-all duration-300 relative z-20 hover:border-white/20"
               >
                 <p className="text-xs text-zinc-300 font-bold tracking-wider mb-4">02</p>
                 <h3 className="text-2xl font-bold text-white mb-4 leading-snug">
@@ -428,9 +428,9 @@ export const TopformSite: React.FC = () => {
         <section id="performance" className="py-20 sm:py-28 lg:py-32 bg-[#000000] border-b border-white/[0.08] overflow-hidden">
           <div className="max-w-[1240px] mx-auto px-6 sm:px-10 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-16 items-stretch">
-              {/* Left Column: Player Portrait uncropped on mobile */}
-              <div className="lg:col-span-5 flex justify-start items-stretch">
-                <div className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-none lg:h-full rounded-2xl overflow-hidden bg-zinc-950 border border-white/[0.08] shadow-2xl flex items-center justify-center">
+              {/* Left Column: Player Portrait uncropped on mobile, centered */}
+              <div className="lg:col-span-5 flex justify-center lg:justify-start items-center lg:items-stretch">
+                <div className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-none lg:h-full rounded-2xl overflow-hidden bg-zinc-950 border border-white/[0.08] shadow-2xl flex items-center justify-center mx-auto lg:mx-0">
                   <img
                     src="/assets/topform-portrait-cover.jpg"
                     alt="Professional footballer looking into camera"
@@ -611,9 +611,9 @@ export const TopformSite: React.FC = () => {
         <section id="fabio-proof" className="py-24 sm:py-32 bg-[#000000] border-b border-white/[0.08] overflow-hidden">
           <div className="max-w-[1200px] mx-auto px-6 sm:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-              {/* Image Left */}
-              <div className="lg:col-span-5 flex justify-start">
-                <div className="relative overflow-hidden rounded-2xl max-w-[440px] border border-white/[0.12] shadow-2xl bg-zinc-950">
+              {/* Image Left — Centered on mobile */}
+              <div className="lg:col-span-5 flex justify-center lg:justify-start">
+                <div className="relative overflow-hidden rounded-2xl max-w-[440px] border border-white/[0.12] shadow-2xl bg-zinc-950 mx-auto lg:mx-0">
                   <img
                     src="/assets/topform-kevin-celebration.jpg"
                     alt="Fabio Carvalho"
@@ -750,8 +750,8 @@ export const TopformSite: React.FC = () => {
                 </div>
               </div>
 
-              {/* Right Column: Always Visible Autoplaying Video Player */}
-              <div className="lg:col-span-5 flex justify-start lg:justify-end">
+              {/* Right Column: Always Visible Autoplaying Video Player — Centered on mobile */}
+              <div className="lg:col-span-5 flex justify-center lg:justify-end">
                 <BimPeppleVideoPlayer />
               </div>
             </div>
@@ -852,9 +852,9 @@ export const TopformSite: React.FC = () => {
                 </p>
               </div>
 
-              {/* Matchday Action Photo Right */}
-              <div className="lg:col-span-5 flex justify-start lg:justify-end">
-                <div className="relative overflow-hidden rounded-2xl max-w-[480px] border border-white/[0.10] shadow-2xl bg-zinc-950">
+              {/* Matchday Action Photo Right — Centered on mobile */}
+              <div className="lg:col-span-5 flex justify-center lg:justify-end">
+                <div className="relative overflow-hidden rounded-2xl max-w-[480px] border border-white/[0.10] shadow-2xl bg-zinc-950 mx-auto lg:mx-0">
                   <img
                     src="/assets/topform-emiliano-bournemouth-bw.jpg"
                     alt="Emiliano Marcondes celebrating — AFC Bournemouth"
