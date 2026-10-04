@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Hero } from './components/Hero';
 import { TopformSite } from './components/TopformSite';
 import { EvvySecSite } from './components/EvvySecSite';
-import { cn } from './lib/utils';
 import {
   Sparkles,
   Layers,
@@ -704,64 +703,22 @@ export function ModernLandingPage() {
 }
 
 export function App() {
-  const [activeSite, setActiveSite] = useState<'landing' | 'topform' | 'seccloud'>(() => {
+  const [activeSite] = useState<'topform' | 'landing' | 'seccloud'>(() => {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       const querySite = params.get('site')?.toLowerCase();
-      if (querySite === 'topform') return 'topform';
+      if (querySite === 'landing') return 'landing';
       if (querySite === 'seccloud' || querySite === 'evvy') return 'seccloud';
-
       const path = window.location.pathname.toLowerCase();
-      if (path.includes('topform')) return 'topform';
       if (path.includes('evvydigital') || path.includes('seccloud')) return 'seccloud';
+      if (path.includes('landing')) return 'landing';
     }
-    return 'landing';
+    return 'topform';
   });
 
-  return (
-    <>
-      {/* Site Switcher Ribbon for Pair-Programming & Multi-Surface Review */}
-      <div className="fixed bottom-3 right-3 z-50 flex items-center gap-1.5 p-1 rounded-full bg-black/80 backdrop-blur-lg border border-white/15 text-xs text-zinc-400 shadow-xl">
-        <button
-          onClick={() => setActiveSite('landing')}
-          className={cn(
-            'px-3 py-1 rounded-full font-medium transition-all',
-            activeSite === 'landing'
-              ? 'bg-gradient-to-r from-[#FA93FA] via-[#C967E8] to-[#983AD6] text-white shadow-sm'
-              : 'hover:text-white'
-          )}
-        >
-          Landing Page
-        </button>
-        <button
-          onClick={() => setActiveSite('topform')}
-          className={cn(
-            'px-2.5 py-1 rounded-full font-medium transition-all',
-            activeSite === 'topform'
-              ? 'bg-[#008BCE] text-white shadow-sm'
-              : 'hover:text-white'
-          )}
-        >
-          TOPFORM
-        </button>
-        <button
-          onClick={() => setActiveSite('seccloud')}
-          className={cn(
-            'px-2.5 py-1 rounded-full font-medium transition-all',
-            activeSite === 'seccloud'
-              ? 'bg-blue-600 text-white shadow-sm'
-              : 'hover:text-white'
-          )}
-        >
-          SecCloud
-        </button>
-      </div>
-
-      {activeSite === 'topform' && <TopformSite />}
-      {activeSite === 'seccloud' && <EvvySecSite />}
-      {activeSite === 'landing' && <ModernLandingPage />}
-    </>
-  );
+  if (activeSite === 'seccloud') return <EvvySecSite />;
+  if (activeSite === 'landing') return <ModernLandingPage />;
+  return <TopformSite />;
 }
 
 export default App;
