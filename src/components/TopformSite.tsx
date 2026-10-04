@@ -78,14 +78,33 @@ const ONGOING_QUESTIONS = [
   'What do you want to improve?',
 ];
 
+const WhatsAppIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    aria-hidden="true"
+    className={className}
+  >
+    <path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.51 0 .16 5.35.16 11.91c0 2.09.55 4.14 1.59 5.95L0 24l6.33-1.66a11.88 11.88 0 0 0 5.74 1.46h.01c6.56 0 11.91-5.35 11.91-11.91 0-3.18-1.24-6.17-3.47-8.41zM12.08 21.8c-1.78 0-3.52-.48-5.05-1.39l-.36-.21-3.75.98 1-3.65-.24-.38a9.85 9.85 0 0 1-1.52-5.24C2.16 6.45 6.61 2 12.08 2c2.65 0 5.14 1.03 7.02 2.9 1.87 1.88 2.9 4.37 2.9 7.02 0 5.46-4.45 9.88-9.92 9.88zm5.42-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35z" />
+  </svg>
+);
+
 /**
  * Signature Figma Work With Mark Button:
- * Dark matte surface, hairline border, uppercase tracking, glowing cyan indicator dot, and WhatsApp subcaption.
+ * Dark matte surface, hairline border, uppercase tracking, WhatsApp icon, glowing cyan indicator dot, and WhatsApp subcaption.
+ * Ensures all CTAs make it completely clear that clicking contacts Mark via WhatsApp.
  */
 const WorkWithMarkButton: React.FC<{
   layout?: 'inline' | 'stacked-left' | 'stacked-center';
   className?: string;
-}> = ({ layout = 'inline', className = '' }) => {
+  label?: string;
+  subtext?: string;
+}> = ({
+  layout = 'inline',
+  className = '',
+  label = 'Message Mark on WhatsApp',
+  subtext = 'Opens a private, confidential WhatsApp conversation directly with Mark.',
+}) => {
   const containerClass =
     layout === 'stacked-center'
       ? 'flex flex-col items-center text-center gap-2.5'
@@ -99,13 +118,14 @@ const WorkWithMarkButton: React.FC<{
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="tf-figma-btn tf-control inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-lg text-[13px] font-bold tracking-[0.14em] uppercase text-white hover:text-white transition-all duration-200"
+        className="tf-figma-btn tf-control inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-lg text-[12px] sm:text-[13px] font-bold tracking-[0.14em] uppercase text-white hover:text-white transition-all duration-200 group"
       >
-        <span>Work with Mark</span>
+        <WhatsAppIcon className="w-4 h-4 text-[#25D366] shrink-0 transition-transform duration-200 group-hover:scale-110" />
+        <span>{label}</span>
         <span className="w-2 h-2 rounded-full bg-[#22c5fe] tf-dot-pulse inline-block shrink-0" />
       </a>
       <span className="text-[13px] text-zinc-300 font-normal">
-        Opens a private WhatsApp conversation with Mark.
+        {subtext}
       </span>
     </div>
   );
@@ -247,19 +267,19 @@ export const TopformSite: React.FC = () => {
           TOP BLUE ACCENT LINE & NAVBAR — Matches Figma Artboard (figma_slice_8.png)
          ===================================================================== */}
       <div className="w-full h-[1px] bg-[#0099FF]" />
-      <header className="sticky top-0 z-40 bg-black/90 backdrop-blur-md border-b border-white/[0.08] px-6 sm:px-12 py-4">
-        <div className="max-w-[1240px] mx-auto flex items-center justify-between">
-          <a href="#top" className="flex items-center gap-3.5 group">
+      <header className="sticky top-0 z-40 bg-black/90 backdrop-blur-md border-b border-white/[0.08] px-4 sm:px-12 py-3.5 sm:py-4">
+        <div className="max-w-[1240px] mx-auto flex items-center justify-between gap-3">
+          <a href="#top" className="flex items-center gap-3 sm:gap-3.5 group min-w-0">
             <img
               src="/assets/topform-roundel-white.png"
               alt="TOPFORM"
-              className="w-9 h-9 object-contain"
+              className="w-8 h-8 sm:w-9 sm:h-9 object-contain shrink-0"
             />
-            <div className="flex flex-col">
-              <span className="text-white font-bold tracking-[0.14em] text-[15px] sm:text-base leading-none">
+            <div className="flex flex-col min-w-0">
+              <span className="text-white font-bold tracking-[0.14em] text-[14px] sm:text-base leading-none">
                 TOPFORM
               </span>
-              <span className="text-[10px] text-zinc-400 font-semibold tracking-[0.18em] uppercase mt-1">
+              <span className="hidden sm:block text-[10px] text-zinc-400 font-semibold tracking-[0.18em] uppercase mt-1 truncate">
                 PLAY AT YOUR BEST. MAKE YOUR BEST BETTER.
               </span>
             </div>
@@ -269,9 +289,10 @@ export const TopformSite: React.FC = () => {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[13px] font-bold tracking-[0.12em] uppercase text-white hover:text-[#22c5fe] transition-colors duration-200"
+            className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-lg border border-white/15 bg-white/[0.04] text-[11px] sm:text-[13px] font-bold tracking-[0.12em] uppercase text-white hover:border-[#22c5fe]/50 hover:bg-[#22c5fe]/10 hover:text-white transition-all duration-200 group whitespace-nowrap shrink-0"
           >
-            Work with Mark
+            <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366] shrink-0 transition-transform duration-200 group-hover:scale-110" />
+            <span>WhatsApp Mark</span>
           </a>
         </div>
       </header>
@@ -332,19 +353,8 @@ export const TopformSite: React.FC = () => {
               Private 1-to-1 performance coaching and bespoke Off-Pitch Training for professional footballers.
             </p>
 
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4 mt-8">
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="tf-figma-btn tf-control inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-lg text-[13px] font-bold tracking-[0.12em] uppercase text-white hover:text-white transition-all duration-200"
-              >
-                <span>Work with Mark</span>
-                <span className="w-2 h-2 rounded-full bg-[#22c5fe] tf-dot-pulse inline-block shrink-0" />
-              </a>
-              <span className="text-[13px] text-zinc-300 font-normal">
-                Opens a private WhatsApp conversation with Mark.
-              </span>
+            <div className="mt-8">
+              <WorkWithMarkButton layout="inline" />
             </div>
           </div>
         </section>
@@ -929,8 +939,8 @@ export const TopformSite: React.FC = () => {
                           <div className="space-y-2 mt-2">
                             {study.wentBullets.map((b) => (
                               <div key={b} className="flex items-center gap-2.5">
-                                <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 shrink-0" />
-                                <span className="text-white text-[15px] sm:text-[16px] font-medium">{b}</span>
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
+                                <span className="text-[#22c5fe] text-[15px] sm:text-[16px] font-semibold">{b}</span>
                               </div>
                             ))}
                           </div>
@@ -1147,18 +1157,27 @@ export const TopformSite: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:items-end text-center sm:text-right gap-1 text-[13px] text-zinc-300 font-normal">
+          <div className="flex flex-col sm:items-end text-center sm:text-right gap-1.5 text-[13px] text-zinc-300 font-normal">
             <p className="text-white font-semibold text-[13px]">Mark Bowden</p>
-            <p>
-              07575 203332 ·{' '}
+            <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-2.5 gap-y-1">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 hover:text-[#22c5fe] transition-colors"
+              >
+                <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366] shrink-0" />
+                <span>WhatsApp: 07575 203332</span>
+              </a>
+              <span className="text-zinc-600 hidden sm:inline">·</span>
               <a href="mailto:mark@topform.global" className="hover:text-white transition-colors">
                 mark@topform.global
-              </a>{' '}
-              ·{' '}
+              </a>
+              <span className="text-zinc-600 hidden sm:inline">·</span>
               <a href="https://www.topform.global" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                 www.topform.global
               </a>
-            </p>
+            </div>
           </div>
         </div>
       </footer>
