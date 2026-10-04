@@ -1105,7 +1105,7 @@ export const TopformSite: React.FC = () => {
                 <img
                   src={getAssetUrl('/assets/topform-mark-bowden.jpg')}
                   alt="Mark Bowden"
-                  className="w-12 h-12 rounded object-cover border border-white/10"
+                  className="w-12 h-12 rounded-lg object-cover object-center grayscale contrast-105 border border-white/15 shrink-0"
                 />
                 <div>
                   <p className="text-white font-bold text-[15px]">Mark Bowden</p>
