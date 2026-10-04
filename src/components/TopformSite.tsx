@@ -1,6 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Volume2, VolumeX, X } from 'lucide-react';
 import Player from '@vimeo/player';
+import { motion } from 'motion/react';
+import { BluePerformanceState3D } from './BluePerformanceState3D';
+import { InteractiveHero3D } from './InteractiveHero3D';
+import { Tilt3DCard } from './Tilt3DCard';
 
 const WHATSAPP_URL =
   "https://wa.me/447575203332?text=Hi%20Mark%2C%20I've%20been%20looking%20at%20TOPFORM%20and%20I'm%20interested%20in%20working%20with%20you.";
@@ -124,15 +128,18 @@ const WorkWithMarkButton: React.FC<{
 
   return (
     <div className={`${containerClass} ${className}`}>
-      <a
+      <motion.a
+        whileHover={{ scale: 1.02, y: -1 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ type: 'spring', stiffness: 450, damping: 28 }}
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="tf-figma-btn tf-control inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-lg text-[12px] sm:text-[13px] font-bold tracking-[0.14em] uppercase text-white hover:text-white transition-all duration-200 group"
+        className="tf-figma-btn tf-control inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-lg text-[12px] sm:text-[13px] font-bold tracking-[0.14em] uppercase text-white hover:text-white transition-all duration-200 group shadow-lg"
       >
         <WhatsAppIcon className="w-4 h-4 text-[#25D366] shrink-0 transition-transform duration-200 group-hover:scale-110" />
         <span>{label}</span>
-      </a>
+      </motion.a>
       <span className="text-[13px] text-zinc-200 font-normal">
         {subtext}
       </span>
@@ -324,39 +331,58 @@ export const TopformSite: React.FC = () => {
             <div className="absolute inset-x-0 bottom-0 h-16 sm:h-36 md:h-56 bg-gradient-to-t from-[#000000] via-[#000000]/60 to-transparent pointer-events-none" />
           </div>
 
+          {/* Interactive 3D Ambient Kinetic Mesh in Hero Space */}
+          <div className="absolute right-0 top-1/2 -translate-y-1/4 w-full lg:w-[640px] h-[440px] lg:h-[600px] opacity-30 pointer-events-none z-0 hidden sm:block">
+            <InteractiveHero3D />
+          </div>
+
           {/* Centered Editorial Hero Content Block — Pure Typography & Restraint */}
           <div className="max-w-[680px] mx-auto px-4 pt-8 sm:pt-12 text-left relative z-10">
-            <h1 className="text-white font-bold tracking-tight text-[clamp(2.4rem,5.5vw,4.25rem)] leading-[1.08]">
-              Play consistently<br />
-              at your best.<br />
-              Make your best<br />
-              even better.
-            </h1>
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.65, ease: [0.23, 1, 0.32, 1] }}
+            >
+              <h1 className="text-white font-bold tracking-tight text-[clamp(2.4rem,5.5vw,4.25rem)] leading-[1.08]">
+                Play consistently<br />
+                at your best.<br />
+                Make your best<br />
+                even better.
+              </h1>
+            </motion.div>
 
-            {/* Reiss Nelson Testimonial Feature — Quiet, Tactile Panel */}
-            <div className="my-10">
-              <div className="tf-figma-card rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 sm:gap-7 items-center sm:items-start">
-                <div className="relative shrink-0 w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 aspect-square rounded-xl overflow-hidden border border-white/10 shadow-2xl mx-auto sm:mx-0">
-                  <img
-                    src={getAssetUrl('/assets/topform-reiss-nelson.jpg')}
-                    alt="Reiss Nelson"
-                    className="w-full h-full object-cover object-center filter contrast-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+            {/* Reiss Nelson Testimonial Feature — Quiet, Tactile Panel with 3D Tilt */}
+            <motion.div
+              className="my-10"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.55, ease: [0.23, 1, 0.32, 1] }}
+            >
+              <Tilt3DCard maxTilt={5}>
+                <div className="tf-figma-card rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 sm:gap-7 items-center sm:items-start">
+                  <div className="relative shrink-0 w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 aspect-square rounded-xl overflow-hidden border border-white/10 shadow-2xl mx-auto sm:mx-0">
+                    <img
+                      src={getAssetUrl('/assets/topform-reiss-nelson.jpg')}
+                      alt="Reiss Nelson"
+                      className="w-full h-full object-cover object-center filter contrast-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                  </div>
+                  <div className="space-y-3 text-left flex-1 pt-1">
+                    <h3 className="text-white font-black tracking-tight text-xl sm:text-2xl uppercase leading-tight">
+                      &ldquo;I RECOMMEND HIM<br />TO EVERY FOOTBALLER.&rdquo;
+                    </h3>
+                    <p className="text-zinc-200 text-[14px] sm:text-[15px] leading-relaxed font-normal">
+                      &ldquo;I started working with Mark when I was on loan at Feyenoord. A difficult time for me... with weekly sessions Mark made me realise that everything I do and think is on me and gave me the confidence I needed to finish the season strong.&rdquo;
+                    </p>
+                    <p className="text-white font-semibold text-xs sm:text-sm">
+                      Reiss Nelson
+                    </p>
+                  </div>
                 </div>
-                <div className="space-y-3 text-left flex-1 pt-1">
-                  <h3 className="text-white font-black tracking-tight text-xl sm:text-2xl uppercase leading-tight">
-                    &ldquo;I RECOMMEND HIM<br />TO EVERY FOOTBALLER.&rdquo;
-                  </h3>
-                  <p className="text-zinc-200 text-[14px] sm:text-[15px] leading-relaxed font-normal">
-                    &ldquo;I started working with Mark when I was on loan at Feyenoord. A difficult time for me... with weekly sessions Mark made me realise that everything I do and think is on me and gave me the confidence I needed to finish the season strong.&rdquo;
-                  </p>
-                  <p className="text-white font-semibold text-xs sm:text-sm">
-                    Reiss Nelson
-                  </p>
-                </div>
-              </div>
-            </div>
+              </Tilt3DCard>
+            </motion.div>
 
             <p className="text-zinc-200 text-[16px] sm:text-[18px] leading-relaxed mt-6">
               Private 1-to-1 performance coaching and bespoke Off-Pitch Training for professional footballers.
@@ -385,39 +411,55 @@ export const TopformSite: React.FC = () => {
             {/* Staggered Cards Layout — Matte Editorial Panels */}
             <div className="relative">
               {/* Card 01 — Left Aligned */}
-              <div
-                className="tf-figma-card rounded-2xl p-7 sm:p-10 w-full max-w-[500px] mr-auto transition-all duration-300 relative z-10 hover:border-white/20"
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.55, ease: [0.23, 1, 0.32, 1] }}
+                className="w-full max-w-[500px] mr-auto relative z-10"
               >
-                <p className="text-xs text-zinc-300 font-bold tracking-wider mb-4">01</p>
-                <h3 className="text-2xl font-bold text-white mb-4 leading-snug">
-                  Bring out the football you already have.
-                </h3>
-                <p className="text-[15px] sm:text-[16px] text-zinc-200 leading-relaxed mb-4">
-                  You've spent years developing your game. But having ability and consistently showing that ability when it matters aren't always the same thing.
-                </p>
-                <p className="text-[15px] sm:text-[16px] text-zinc-200 leading-relaxed">
-                  TOPFORM helps you understand what allows your best football to come out — and conditions you to get there more consistently.
-                </p>
-              </div>
+                <Tilt3DCard maxTilt={6}>
+                  <div className="tf-figma-card rounded-2xl p-7 sm:p-10 transition-all duration-300 hover:border-white/20">
+                    <p className="text-xs text-zinc-300 font-bold tracking-wider mb-4">01</p>
+                    <h3 className="text-2xl font-bold text-white mb-4 leading-snug">
+                      Bring out the football you already have.
+                    </h3>
+                    <p className="text-[15px] sm:text-[16px] text-zinc-200 leading-relaxed mb-4">
+                      You've spent years developing your game. But having ability and consistently showing that ability when it matters aren't always the same thing.
+                    </p>
+                    <p className="text-[15px] sm:text-[16px] text-zinc-200 leading-relaxed">
+                      TOPFORM helps you understand what allows your best football to come out — and conditions you to get there more consistently.
+                    </p>
+                  </div>
+                </Tilt3DCard>
+              </motion.div>
 
               {/* Card 02 — Right Aligned & Staggered */}
-              <div
-                className="tf-figma-card rounded-2xl p-7 sm:p-10 w-full max-w-[500px] ml-auto mt-8 lg:-mt-12 transition-all duration-300 relative z-20 hover:border-white/20"
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.55, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
+                className="w-full max-w-[500px] ml-auto mt-8 lg:-mt-12 relative z-20"
               >
-                <p className="text-xs text-zinc-300 font-bold tracking-wider mb-4">02</p>
-                <h3 className="text-2xl font-bold text-white mb-4 leading-snug">
-                  Keep developing the football you have.
-                </h3>
-                <p className="text-[15px] sm:text-[16px] text-zinc-200 leading-relaxed mb-3">
-                  There's always something you can get better at.
-                </p>
-                <p className="text-[15px] sm:text-[16px] text-white font-medium leading-relaxed mb-4">
-                  Your movement. Finishing. Positioning. Decision-making. Composure. Confidence. How you respond to mistakes. Whatever matters most to your game.
-                </p>
-                <p className="text-[15px] sm:text-[16px] text-zinc-200 leading-relaxed">
-                  Through bespoke Off-Pitch Training, we identify what you want to improve and deliberately rehearse it.
-                </p>
-              </div>
+                <Tilt3DCard maxTilt={6}>
+                  <div className="tf-figma-card rounded-2xl p-7 sm:p-10 transition-all duration-300 hover:border-white/20">
+                    <p className="text-xs text-zinc-300 font-bold tracking-wider mb-4">02</p>
+                    <h3 className="text-2xl font-bold text-white mb-4 leading-snug">
+                      Keep developing the football you have.
+                    </h3>
+                    <p className="text-[15px] sm:text-[16px] text-zinc-200 leading-relaxed mb-3">
+                      There's always something you can get better at.
+                    </p>
+                    <p className="text-[15px] sm:text-[16px] text-white font-medium leading-relaxed mb-4">
+                      Your movement. Finishing. Positioning. Decision-making. Composure. Confidence. How you respond to mistakes. Whatever matters most to your game.
+                    </p>
+                    <p className="text-[15px] sm:text-[16px] text-zinc-200 leading-relaxed">
+                      Through bespoke Off-Pitch Training, we identify what you want to improve and deliberately rehearse it.
+                    </p>
+                  </div>
+                </Tilt3DCard>
+              </motion.div>
 
               {/* Bottom Divider & Left-Aligned Kicker */}
               <div className="mt-20 pt-12 border-t border-white/[0.08] text-left">
@@ -545,69 +587,106 @@ export const TopformSite: React.FC = () => {
 
             {/* Clear Red / Green / Blue Separation */}
             <div className="space-y-6">
-              {/* Red Brain — Monochromatic & Quiet */}
-              <div className="tf-figma-card rounded-2xl p-6 sm:p-9 space-y-4">
-                <h3 className="text-2xl font-bold text-white">Red Brain</h3>
-                <div className="space-y-3 text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
-                  <p>Your Red Brain isn't something we're trying to get rid of.</p>
-                  <p className="text-white font-semibold">But we don't want it in control.</p>
-                  <p className="text-zinc-200">
-                    Left in control, anger can become frustration. Nerves can become anxiety. Thinking can become overthinking. Pressure can make you rush, hesitate, force things or play safe.
-                  </p>
-                  <p className="text-zinc-200">
-                    But those same raw ingredients can be incredibly useful when they're controlled in the right way.
-                  </p>
-                </div>
-              </div>
-
-              {/* Green Brain — Monochromatic & Quiet */}
-              <div className="tf-figma-card rounded-2xl p-6 sm:p-9 space-y-4">
-                <h3 className="text-2xl font-bold text-white">Green Brain</h3>
-                <div className="space-y-3 text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
-                  <p>This is where your Green Brain comes in.</p>
-                  <p className="text-zinc-200">
-                    Your Green Brain keeps you present and puts your attention onto the things you can control.
-                  </p>
-                  <p className="text-zinc-200">
-                    And rather than allowing Red Brain to take over, Green Brain takes control of what Red Brain gives you.
-                  </p>
-                  <div className="space-y-2 py-2 border-y border-white/[0.06] my-2 text-zinc-200 text-[15px]">
-                    <p className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-300 shrink-0" />
-                      <span>Anger can become aggression and intensity.</span>
-                    </p>
-                    <p className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-300 shrink-0" />
-                      <span>Nerves and anxiety can become sharpness, awareness and energy.</span>
-                    </p>
+              {/* Red Brain — Monochromatic & Quiet with Subtle 3D Depth */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <Tilt3DCard maxTilt={3} className="rounded-2xl">
+                  <div className="tf-figma-card rounded-2xl p-6 sm:p-9 space-y-4">
+                    <h3 className="text-2xl font-bold text-white">Red Brain</h3>
+                    <div className="space-y-3 text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
+                      <p>Your Red Brain isn't something we're trying to get rid of.</p>
+                      <p className="text-white font-semibold">But we don't want it in control.</p>
+                      <p className="text-zinc-200">
+                        Left in control, anger can become frustration. Nerves can become anxiety. Thinking can become overthinking. Pressure can make you rush, hesitate, force things or play safe.
+                      </p>
+                      <p className="text-zinc-200">
+                        But those same raw ingredients can be incredibly useful when they're controlled in the right way.
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-zinc-200">
-                    You're not trying to become emotionless or completely calm.
-                  </p>
-                  <p className="text-white font-semibold">
-                    You're using what you've got.
-                  </p>
-                </div>
-              </div>
+                </Tilt3DCard>
+              </motion.div>
 
-              {/* Blue Performance State — The Arrival of Color */}
-              <div className="tf-blue-state-card rounded-2xl p-7 sm:p-11 space-y-5 relative overflow-hidden">
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#22c5fe] tracking-tight">
-                  Blue Performance State
-                </h3>
-                <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
-                  When Green Brain is in control and those raw ingredients from Red Brain are working for you rather than against you, you create your <strong className="text-white font-bold">Blue Performance State</strong>.
-                </p>
-                <p className="text-white font-bold text-[16px] sm:text-[17px] leading-relaxed pt-1">
-                  Your mind is clear. You're present.
-                </p>
-                <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
-                  You're seeing, reacting and deciding rather than consciously trying to control your football.
-                </p>
-                <p className="text-[#22c5fe] font-black text-2xl sm:text-3xl pt-2 tracking-tight">
-                  Your football takes over.
-                </p>
-              </div>
+              {/* Green Brain — Monochromatic & Quiet with Subtle 3D Depth */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <Tilt3DCard maxTilt={3} className="rounded-2xl">
+                  <div className="tf-figma-card rounded-2xl p-6 sm:p-9 space-y-4">
+                    <h3 className="text-2xl font-bold text-white">Green Brain</h3>
+                    <div className="space-y-3 text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
+                      <p>This is where your Green Brain comes in.</p>
+                      <p className="text-zinc-200">
+                        Your Green Brain keeps you present and puts your attention onto the things you can control.
+                      </p>
+                      <p className="text-zinc-200">
+                        And rather than allowing Red Brain to take over, Green Brain takes control of what Red Brain gives you.
+                      </p>
+                      <div className="space-y-2 py-2 border-y border-white/[0.06] my-2 text-zinc-200 text-[15px]">
+                        <p className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-zinc-300 shrink-0" />
+                          <span>Anger can become aggression and intensity.</span>
+                        </p>
+                        <p className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-zinc-300 shrink-0" />
+                          <span>Nerves and anxiety can become sharpness, awareness and energy.</span>
+                        </p>
+                      </div>
+                      <p className="text-zinc-200">
+                        You're not trying to become emotionless or completely calm.
+                      </p>
+                      <p className="text-white font-semibold">
+                        You're using what you've got.
+                      </p>
+                    </div>
+                  </div>
+                </Tilt3DCard>
+              </motion.div>
+
+              {/* Blue Performance State — The Arrival of Color with Interactive 3D Flow Orb */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+              >
+                <div className="tf-blue-state-card rounded-2xl p-7 sm:p-11 relative overflow-hidden">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                    <div className="lg:col-span-7 space-y-5 text-left">
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0099ff]/15 border border-[#0099ff]/30 text-[#22c5fe] text-xs font-bold tracking-wider uppercase">
+                        <span>03 &mdash; Flow State</span>
+                      </div>
+                      <h3 className="text-2xl sm:text-3xl font-bold text-[#22c5fe] tracking-tight">
+                        Blue Performance State
+                      </h3>
+                      <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
+                        When Green Brain is in control and those raw ingredients from Red Brain are working for you rather than against you, you create your <strong className="text-white font-bold">Blue Performance State</strong>.
+                      </p>
+                      <p className="text-white font-bold text-[16px] sm:text-[17px] leading-relaxed pt-1">
+                        Your mind is clear. You're present.
+                      </p>
+                      <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
+                        You're seeing, reacting and deciding rather than consciously trying to control your football.
+                      </p>
+                      <p className="text-[#22c5fe] font-black text-2xl sm:text-3xl pt-2 tracking-tight">
+                        Your football takes over.
+                      </p>
+                    </div>
+
+                    {/* Interactive 3D Blue Performance State Flow Orb */}
+                    <div className="lg:col-span-5 flex justify-center items-center">
+                      <BluePerformanceState3D />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -689,37 +768,64 @@ export const TopformSite: React.FC = () => {
                 Your position. Your game. Your situations.
               </h3>
 
-              {/* 3 Horizontal Cards Side by Side (scan_slice_01.png) */}
+              {/* 3 Horizontal Cards Side by Side with 3D Tilt */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
                 {/* 01 STRIKERS */}
-                <div className="tf-figma-card rounded-2xl p-6 sm:p-8 space-y-4">
-                  <p className="text-xs text-zinc-300 font-semibold tracking-wider">
-                    01  STRIKERS
-                  </p>
-                  <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
-                    <strong className="text-white">If you're a striker</strong>, we might rehearse the movement you're working on with your striker coach. Attacking a particular type of cross. Creating separation from a centre-back. A 1v1 with the goalkeeper. Or what you do immediately after missing a chance.
-                  </p>
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-30px' }}
+                  transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+                >
+                  <Tilt3DCard maxTilt={6}>
+                    <div className="tf-figma-card rounded-2xl p-6 sm:p-8 space-y-4 h-full hover:border-white/20">
+                      <p className="text-xs text-zinc-300 font-semibold tracking-wider">
+                        01  STRIKERS
+                      </p>
+                      <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
+                        <strong className="text-white">If you're a striker</strong>, we might rehearse the movement you're working on with your striker coach. Attacking a particular type of cross. Creating separation from a centre-back. A 1v1 with the goalkeeper. Or what you do immediately after missing a chance.
+                      </p>
+                    </div>
+                  </Tilt3DCard>
+                </motion.div>
 
                 {/* 02 MIDFIELDERS */}
-                <div className="tf-figma-card rounded-2xl p-6 sm:p-8 space-y-4">
-                  <p className="text-xs text-zinc-300 font-semibold tracking-wider">
-                    02  MIDFIELDERS
-                  </p>
-                  <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
-                    <strong className="text-white">If you're a midfielder</strong>, it might be scanning before you receive, recognising where the pressure is coming from, receiving on the half-turn or seeing the next pass earlier.
-                  </p>
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-30px' }}
+                  transition={{ duration: 0.5, delay: 0.08, ease: [0.23, 1, 0.32, 1] }}
+                >
+                  <Tilt3DCard maxTilt={6}>
+                    <div className="tf-figma-card rounded-2xl p-6 sm:p-8 space-y-4 h-full hover:border-white/20">
+                      <p className="text-xs text-zinc-300 font-semibold tracking-wider">
+                        02  MIDFIELDERS
+                      </p>
+                      <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
+                        <strong className="text-white">If you're a midfielder</strong>, it might be scanning before you receive, recognising where the pressure is coming from, receiving on the half-turn or seeing the next pass earlier.
+                      </p>
+                    </div>
+                  </Tilt3DCard>
+                </motion.div>
 
                 {/* 03 DEFENDERS */}
-                <div className="tf-figma-card rounded-2xl p-6 sm:p-8 space-y-4">
-                  <p className="text-xs text-zinc-300 font-semibold tracking-wider">
-                    03  DEFENDERS
-                  </p>
-                  <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
-                    <strong className="text-white">If you're a defender</strong>, it might be decision-making, breaking lines, stepping in with the ball, playing more effective diagonal passes, 1v1 defending, leadership or composure.
-                  </p>
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-30px' }}
+                  transition={{ duration: 0.5, delay: 0.16, ease: [0.23, 1, 0.32, 1] }}
+                >
+                  <Tilt3DCard maxTilt={6}>
+                    <div className="tf-figma-card rounded-2xl p-6 sm:p-8 space-y-4 h-full hover:border-white/20">
+                      <p className="text-xs text-zinc-300 font-semibold tracking-wider">
+                        03  DEFENDERS
+                      </p>
+                      <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
+                        <strong className="text-white">If you're a defender</strong>, it might be decision-making, breaking lines, stepping in with the ball, playing more effective diagonal passes, 1v1 defending, leadership or composure.
+                      </p>
+                    </div>
+                  </Tilt3DCard>
+                </motion.div>
               </div>
 
               {/* Kicker Below Cards */}
@@ -906,64 +1012,70 @@ export const TopformSite: React.FC = () => {
               {CASE_STUDIES.map((study, idx) => {
                 const isEven = idx % 2 === 1;
                 return (
-                  <div
+                  <motion.div
                     key={study.number}
-                    className={`tf-figma-card rounded-2xl p-6 sm:p-10 lg:p-12 relative overflow-hidden transition-all duration-300 hover:border-white/20 ${
-                      isEven ? 'lg:ml-auto lg:max-w-[980px]' : 'lg:mr-auto lg:max-w-[980px]'
-                    }`}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-60px' }}
+                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    className={isEven ? 'lg:ml-auto lg:max-w-[980px]' : 'lg:mr-auto lg:max-w-[980px]'}
                   >
-                    <p className="text-xs text-zinc-300 font-bold tracking-wider mb-4">
-                      {study.number}
-                    </p>
-
-                    <h3 className="text-xl sm:text-2xl lg:text-[25px] font-bold text-white uppercase leading-snug tracking-tight mb-8">
-                      {study.title}
-                    </h3>
-
-                    {/* Editorial 2-Column Comparative Split on Desktop */}
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 pt-6 border-t border-white/[0.08]">
-                      {/* Left: Started */}
-                      <div className="md:col-span-5 space-y-3 text-left">
-                        <p className="text-xs font-semibold text-zinc-300 uppercase tracking-[0.14em]">
-                          WHEN WE STARTED WORKING TOGETHER
+                    <Tilt3DCard maxTilt={3} className="rounded-2xl">
+                      <div className="tf-figma-card rounded-2xl p-6 sm:p-10 lg:p-12 relative overflow-hidden transition-all duration-300 hover:border-white/20">
+                        <p className="text-xs text-zinc-300 font-bold tracking-wider mb-4">
+                          {study.number}
                         </p>
-                        <div className="space-y-2.5">
-                          {study.startedParagraphs.map((p, pIdx) => (
-                            <p key={pIdx} className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
-                              {p}
+
+                        <h3 className="text-xl sm:text-2xl lg:text-[25px] font-bold text-white uppercase leading-snug tracking-tight mb-8">
+                          {study.title}
+                        </h3>
+
+                        {/* Editorial 2-Column Comparative Split on Desktop */}
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 pt-6 border-t border-white/[0.08]">
+                          {/* Left: Started */}
+                          <div className="md:col-span-5 space-y-3 text-left">
+                            <p className="text-xs font-semibold text-zinc-300 uppercase tracking-[0.14em]">
+                              WHEN WE STARTED WORKING TOGETHER
                             </p>
-                          ))}
+                            <div className="space-y-2.5">
+                              {study.startedParagraphs.map((p, pIdx) => (
+                                <p key={pIdx} className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
+                                  {p}
+                                </p>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Right: Where career went */}
+                          <div className="md:col-span-7 space-y-3 text-left border-t border-white/[0.08] pt-6 md:border-t-0 md:pt-0 md:border-l md:border-white/[0.08] md:pl-8 lg:pl-10">
+                            <p className="text-xs font-semibold text-zinc-300 uppercase tracking-[0.14em]">
+                              WHERE HIS CAREER WENT
+                            </p>
+                            <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
+                              {study.wentIntro}
+                            </p>
+                            {study.wentBullets && (
+                              <div className="space-y-2 mt-2">
+                                {study.wentBullets.map((b) => (
+                                  <div key={b} className="flex items-center gap-2.5">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
+                                    <span className="text-[#22c5fe] text-[15px] sm:text-[16px] font-semibold">{b}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Takeaway / Summary Bar */}
+                        <div className="pt-6 mt-6 border-t border-white/[0.08]">
+                          <p className="text-white font-semibold text-[15px] sm:text-[16px] leading-relaxed">
+                            {study.summary}
+                          </p>
                         </div>
                       </div>
-
-                      {/* Right: Where career went */}
-                      <div className="md:col-span-7 space-y-3 text-left border-t border-white/[0.08] pt-6 md:border-t-0 md:pt-0 md:border-l md:border-white/[0.08] md:pl-8 lg:pl-10">
-                        <p className="text-xs font-semibold text-zinc-300 uppercase tracking-[0.14em]">
-                          WHERE HIS CAREER WENT
-                        </p>
-                        <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
-                          {study.wentIntro}
-                        </p>
-                        {study.wentBullets && (
-                          <div className="space-y-2 mt-2">
-                            {study.wentBullets.map((b) => (
-                              <div key={b} className="flex items-center gap-2.5">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
-                                <span className="text-[#22c5fe] text-[15px] sm:text-[16px] font-semibold">{b}</span>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Takeaway / Summary Bar */}
-                    <div className="pt-6 mt-6 border-t border-white/[0.08]">
-                      <p className="text-white font-semibold text-[15px] sm:text-[16px] leading-relaxed">
-                        {study.summary}
-                      </p>
-                    </div>
-                  </div>
+                    </Tilt3DCard>
+                  </motion.div>
                 );
               })}
             </div>
