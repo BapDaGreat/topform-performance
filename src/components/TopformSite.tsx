@@ -282,16 +282,16 @@ export const TopformSite: React.FC = () => {
             Wide floodlit players banner across top + crisp solid white headline & CTA
            =================================================================== */}
         <section className="relative bg-[#000000] text-white pt-0 pb-24 sm:pb-32 overflow-hidden border-b border-white/[0.08]">
-          {/* Full-bleed monochrome picture expanding to fill the screen */}
+          {/* Full-bleed monochrome picture expanding to fill the screen without cropping */}
           <div className="w-full relative overflow-hidden">
             <img
               src="/assets/topform-players-bw.jpg"
               alt="Professional footballers working with Mark Bowden"
-              className="w-full h-auto min-h-[300px] sm:min-h-[420px] md:min-h-[520px] lg:min-h-[600px] max-h-[820px] block object-cover object-top"
+              className="w-full h-auto block object-cover sm:object-cover object-top max-h-[820px]"
               fetchPriority="high"
             />
             {/* Seamless gradient fade at the bottom into pure black */}
-            <div className="absolute inset-x-0 bottom-0 h-40 sm:h-56 md:h-72 bg-gradient-to-t from-[#000000] via-[#000000]/70 to-transparent pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-16 sm:h-36 md:h-56 bg-gradient-to-t from-[#000000] via-[#000000]/60 to-transparent pointer-events-none" />
           </div>
 
           {/* Centered Editorial Hero Content Block — Pure Typography & Restraint */}
@@ -418,13 +418,13 @@ export const TopformSite: React.FC = () => {
         <section id="performance" className="py-20 sm:py-28 lg:py-32 bg-[#000000] border-b border-white/[0.08] overflow-hidden">
           <div className="max-w-[1240px] mx-auto px-6 sm:px-10 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-16 items-stretch">
-              {/* Left Column: Player Portrait in line with paragraph height */}
+              {/* Left Column: Player Portrait uncropped on mobile */}
               <div className="lg:col-span-5 flex justify-center lg:justify-start items-stretch">
-                <div className="relative w-full max-w-[420px] lg:max-w-none h-[520px] sm:h-[640px] lg:h-full rounded-2xl overflow-hidden bg-zinc-950 border border-white/[0.08] shadow-2xl">
+                <div className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-none lg:h-full rounded-2xl overflow-hidden bg-zinc-950 border border-white/[0.08] shadow-2xl flex items-center justify-center">
                   <img
                     src="/assets/topform-portrait-cover.jpg"
                     alt="Professional footballer looking into camera"
-                    className="w-full h-full object-cover object-[center_12%] filter contrast-105 brightness-100 block"
+                    className="w-full h-auto max-h-[680px] lg:max-h-none lg:h-full block object-contain lg:object-cover filter contrast-105 brightness-100"
                     loading="lazy"
                   />
                 </div>
@@ -607,10 +607,10 @@ export const TopformSite: React.FC = () => {
                   <img
                     src="/assets/topform-kevin-celebration.jpg"
                     alt="Fabio Carvalho"
-                    className="w-full h-auto block object-cover filter contrast-105 brightness-100"
+                    className="w-full h-auto block object-contain sm:object-cover filter contrast-105 brightness-100"
                     loading="lazy"
                   />
-                  <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#000000] via-[#000000]/65 to-transparent pointer-events-none" />
+                  <div className="absolute inset-x-0 bottom-0 h-8 sm:h-20 bg-gradient-to-t from-[#000000] via-[#000000]/40 to-transparent pointer-events-none" />
                 </div>
               </div>
 
@@ -672,30 +672,30 @@ export const TopformSite: React.FC = () => {
 
               {/* 3 Horizontal Cards Side by Side (scan_slice_01.png) */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-                {/* 01 / STRIKERS */}
+                {/* 01 STRIKERS */}
                 <div className="tf-figma-card rounded-2xl p-6 sm:p-8 space-y-4">
                   <p className="text-xs text-zinc-400 font-semibold tracking-wider">
-                    01 / STRIKERS
+                    01  STRIKERS
                   </p>
                   <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
                     <strong className="text-white">If you're a striker</strong>, we might rehearse the movement you're working on with your striker coach. Attacking a particular type of cross. Creating separation from a centre-back. A 1v1 with the goalkeeper. Or what you do immediately after missing a chance.
                   </p>
                 </div>
 
-                {/* 02 / MIDFIELDERS */}
+                {/* 02 MIDFIELDERS */}
                 <div className="tf-figma-card rounded-2xl p-6 sm:p-8 space-y-4">
                   <p className="text-xs text-zinc-400 font-semibold tracking-wider">
-                    02 / MIDFIELDERS
+                    02  MIDFIELDERS
                   </p>
                   <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
                     <strong className="text-white">If you're a midfielder</strong>, it might be scanning before you receive, recognising where the pressure is coming from, receiving on the half-turn or seeing the next pass earlier.
                   </p>
                 </div>
 
-                {/* 03 / DEFENDERS */}
+                {/* 03 DEFENDERS */}
                 <div className="tf-figma-card rounded-2xl p-6 sm:p-8 space-y-4">
                   <p className="text-xs text-zinc-400 font-semibold tracking-wider">
-                    03 / DEFENDERS
+                    03  DEFENDERS
                   </p>
                   <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
                     <strong className="text-white">If you're a defender</strong>, it might be decision-making, breaking lines, stepping in with the ball, playing more effective diagonal passes, 1v1 defending, leadership or composure.
@@ -848,10 +848,10 @@ export const TopformSite: React.FC = () => {
                   <img
                     src="/assets/topform-emiliano-bournemouth-bw.jpg"
                     alt="Emiliano Marcondes celebrating — AFC Bournemouth"
-                    className="w-full h-auto block object-cover filter contrast-105 brightness-100"
+                    className="w-full h-auto block object-contain sm:object-cover filter contrast-105 brightness-100"
                     loading="lazy"
                   />
-                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#000000] via-[#000000]/60 to-transparent pointer-events-none" />
+                  <div className="absolute inset-x-0 bottom-0 h-6 sm:h-16 bg-gradient-to-t from-[#000000] via-[#000000]/40 to-transparent pointer-events-none" />
                 </div>
               </div>
             </div>
@@ -893,18 +893,9 @@ export const TopformSite: React.FC = () => {
                       isEven ? 'lg:ml-auto lg:max-w-[980px]' : 'lg:mr-auto lg:max-w-[980px]'
                     }`}
                   >
-                    {/* Architectural Large Numeral & Category Label Header */}
-                    <div className="flex items-start justify-between gap-4 mb-4">
-                      <div className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
-                        <span className="text-xs text-zinc-400 font-bold tracking-[0.18em] uppercase">
-                          CASE STORY / {study.number}
-                        </span>
-                      </div>
-                      <span className="text-4xl sm:text-5xl lg:text-6xl font-extralight text-white/[0.14] select-none tracking-tight leading-none font-mono">
-                        {study.number}
-                      </span>
-                    </div>
+                    <p className="text-xs text-zinc-400 font-bold tracking-wider mb-4">
+                      {study.number}
+                    </p>
 
                     <h3 className="text-xl sm:text-2xl lg:text-[25px] font-bold text-white uppercase leading-snug tracking-tight mb-8">
                       {study.title}
@@ -938,7 +929,7 @@ export const TopformSite: React.FC = () => {
                           <div className="space-y-2 mt-2">
                             {study.wentBullets.map((b) => (
                               <div key={b} className="flex items-center gap-2.5">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
+                                <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 shrink-0" />
                                 <span className="text-white text-[15px] sm:text-[16px] font-medium">{b}</span>
                               </div>
                             ))}
@@ -948,8 +939,7 @@ export const TopformSite: React.FC = () => {
                     </div>
 
                     {/* Takeaway / Summary Bar */}
-                    <div className="pt-6 mt-6 border-t border-white/[0.08] flex items-start sm:items-center gap-3">
-                      <span className="w-1 h-5 rounded-full bg-[#22c5fe]/80 shrink-0 mt-0.5 sm:mt-0" />
+                    <div className="pt-6 mt-6 border-t border-white/[0.08]">
                       <p className="text-white font-semibold text-[15px] sm:text-[16px] leading-relaxed">
                         {study.summary}
                       </p>
