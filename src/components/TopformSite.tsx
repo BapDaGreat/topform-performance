@@ -122,7 +122,6 @@ const WorkWithMarkButton: React.FC<{
       >
         <WhatsAppIcon className="w-4 h-4 text-[#25D366] shrink-0 transition-transform duration-200 group-hover:scale-110" />
         <span>{label}</span>
-        <span className="w-2 h-2 rounded-full bg-[#22c5fe] tf-dot-pulse inline-block shrink-0" />
       </a>
       <span className="text-[13px] text-zinc-200 font-normal">
         {subtext}
