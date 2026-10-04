@@ -124,7 +124,7 @@ const WorkWithMarkButton: React.FC<{
         <span>{label}</span>
         <span className="w-2 h-2 rounded-full bg-[#22c5fe] tf-dot-pulse inline-block shrink-0" />
       </a>
-      <span className="text-[13px] text-zinc-300 font-normal">
+      <span className="text-[13px] text-zinc-200 font-normal">
         {subtext}
       </span>
     </div>
@@ -279,7 +279,7 @@ export const TopformSite: React.FC = () => {
               <span className="text-white font-bold tracking-[0.14em] text-[14px] sm:text-base leading-none">
                 TOPFORM
               </span>
-              <span className="hidden sm:block text-[10px] text-zinc-400 font-semibold tracking-[0.18em] uppercase mt-1 truncate">
+              <span className="hidden sm:block text-[10px] text-zinc-300 font-semibold tracking-[0.18em] uppercase mt-1 truncate">
                 PLAY AT YOUR BEST. MAKE YOUR BEST BETTER.
               </span>
             </div>
@@ -326,7 +326,7 @@ export const TopformSite: React.FC = () => {
 
             {/* Reiss Nelson Testimonial Feature — Quiet, Tactile Panel */}
             <div className="my-10">
-              <div className="tf-figma-card rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 sm:gap-7 items-center sm:items-start">
+              <div className="tf-figma-card rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 sm:gap-7 items-start">
                 <div className="relative shrink-0 w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 aspect-square rounded-xl overflow-hidden border border-white/10 shadow-2xl">
                   <img
                     src="/assets/topform-reiss-nelson.jpg"
@@ -339,7 +339,7 @@ export const TopformSite: React.FC = () => {
                   <h3 className="text-white font-black tracking-tight text-xl sm:text-2xl uppercase leading-tight">
                     &ldquo;I RECOMMEND HIM<br />TO EVERY FOOTBALLER.&rdquo;
                   </h3>
-                  <p className="text-zinc-300 text-[14px] sm:text-[15px] leading-relaxed font-normal">
+                  <p className="text-zinc-200 text-[14px] sm:text-[15px] leading-relaxed font-normal">
                     &ldquo;I started working with Mark when I was on loan at Feyenoord. A difficult time for me... with weekly sessions Mark made me realise that everything I do and think is on me and gave me the confidence I needed to finish the season strong.&rdquo;
                   </p>
                   <p className="text-white font-semibold text-xs sm:text-sm">
@@ -349,7 +349,7 @@ export const TopformSite: React.FC = () => {
               </div>
             </div>
 
-            <p className="text-zinc-300 text-[16px] sm:text-[18px] leading-relaxed mt-6">
+            <p className="text-zinc-200 text-[16px] sm:text-[18px] leading-relaxed mt-6">
               Private 1-to-1 performance coaching and bespoke Off-Pitch Training for professional footballers.
             </p>
 
@@ -377,42 +377,42 @@ export const TopformSite: React.FC = () => {
             <div className="relative">
               {/* Card 01 — Left Aligned */}
               <div
-                className="tf-figma-card rounded-2xl p-8 sm:p-10 max-w-[500px] mr-auto transition-all duration-300 relative z-10 hover:border-white/20"
+                className="tf-figma-card rounded-2xl p-7 sm:p-10 w-[calc(100%-16px)] sm:w-full max-w-[500px] mr-auto transition-all duration-300 relative z-10 hover:border-white/20"
               >
-                <p className="text-xs text-zinc-400 font-bold tracking-wider mb-4">01</p>
+                <p className="text-xs text-zinc-300 font-bold tracking-wider mb-4">01</p>
                 <h3 className="text-2xl font-bold text-white mb-4 leading-snug">
                   Bring out the football you already have.
                 </h3>
-                <p className="text-[15px] sm:text-[16px] text-zinc-300 leading-relaxed mb-4">
+                <p className="text-[15px] sm:text-[16px] text-zinc-200 leading-relaxed mb-4">
                   You've spent years developing your game. But having ability and consistently showing that ability when it matters aren't always the same thing.
                 </p>
-                <p className="text-[15px] sm:text-[16px] text-zinc-300 leading-relaxed">
+                <p className="text-[15px] sm:text-[16px] text-zinc-200 leading-relaxed">
                   TOPFORM helps you understand what allows your best football to come out — and conditions you to get there more consistently.
                 </p>
               </div>
 
               {/* Card 02 — Right Aligned & Staggered */}
               <div
-                className="tf-figma-card rounded-2xl p-8 sm:p-10 max-w-[500px] ml-auto mt-8 lg:-mt-12 transition-all duration-300 relative z-20 hover:border-white/20"
+                className="tf-figma-card rounded-2xl p-7 sm:p-10 w-[calc(100%-16px)] sm:w-full max-w-[500px] ml-auto mt-8 lg:-mt-12 transition-all duration-300 relative z-20 hover:border-white/20"
               >
-                <p className="text-xs text-zinc-400 font-bold tracking-wider mb-4">02</p>
+                <p className="text-xs text-zinc-300 font-bold tracking-wider mb-4">02</p>
                 <h3 className="text-2xl font-bold text-white mb-4 leading-snug">
                   Keep developing the football you have.
                 </h3>
-                <p className="text-[15px] sm:text-[16px] text-zinc-300 leading-relaxed mb-3">
+                <p className="text-[15px] sm:text-[16px] text-zinc-200 leading-relaxed mb-3">
                   There's always something you can get better at.
                 </p>
                 <p className="text-[15px] sm:text-[16px] text-white font-medium leading-relaxed mb-4">
                   Your movement. Finishing. Positioning. Decision-making. Composure. Confidence. How you respond to mistakes. Whatever matters most to your game.
                 </p>
-                <p className="text-[15px] sm:text-[16px] text-zinc-300 leading-relaxed">
+                <p className="text-[15px] sm:text-[16px] text-zinc-200 leading-relaxed">
                   Through bespoke Off-Pitch Training, we identify what you want to improve and deliberately rehearse it.
                 </p>
               </div>
 
               {/* Bottom Divider & Left-Aligned Kicker */}
               <div className="mt-20 pt-12 border-t border-white/[0.08] text-left">
-                <p className="text-zinc-300 text-base sm:text-lg">
+                <p className="text-zinc-200 text-base sm:text-lg">
                   Play at your best. <strong className="text-white font-bold">Make your best better. Keep doing both.</strong>
                 </p>
               </div>
@@ -429,7 +429,7 @@ export const TopformSite: React.FC = () => {
           <div className="max-w-[1240px] mx-auto px-6 sm:px-10 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-16 items-stretch">
               {/* Left Column: Player Portrait uncropped on mobile */}
-              <div className="lg:col-span-5 flex justify-center lg:justify-start items-stretch">
+              <div className="lg:col-span-5 flex justify-start items-stretch">
                 <div className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-none lg:h-full rounded-2xl overflow-hidden bg-zinc-950 border border-white/[0.08] shadow-2xl flex items-center justify-center">
                   <img
                     src="/assets/topform-portrait-cover.jpg"
@@ -453,15 +453,15 @@ export const TopformSite: React.FC = () => {
                     You're in the game.
                   </p>
 
-                  <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed mb-4">
+                  <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed mb-4">
                     Your mind is clear. You're present. You're not overthinking anything.
                   </p>
 
-                  <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed mb-4">
+                  <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed mb-4">
                     You see things quickly. Decisions come naturally. You trust yourself. Your game feels instinctive, automatic and effortless.
                   </p>
 
-                  <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed mb-4">
+                  <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed mb-4">
                     Some players call it being in the zone. Others call it flow.
                   </p>
 
@@ -469,7 +469,7 @@ export const TopformSite: React.FC = () => {
                     I call it your Blue Performance State.
                   </p>
 
-                  <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed mb-4">
+                  <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed mb-4">
                     One of the first things we'll work on in TOPFORM is understanding what takes you away from that state — and conditioning you to get there more consistently.
                   </p>
 
@@ -487,7 +487,7 @@ export const TopformSite: React.FC = () => {
                     Because what if we can make your best even better?
                   </h3>
 
-                  <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+                  <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
                     No matter how well you're playing, there's always something you can get better at.
                   </p>
 
@@ -495,7 +495,7 @@ export const TopformSite: React.FC = () => {
                     Your movement. Finishing. First touch. Positioning. Scanning. Decision-making. Composure. Confidence. How you respond to mistakes. Whatever matters most to your game.
                   </p>
 
-                  <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+                  <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
                     Through bespoke Off-Pitch Training, we take what you want to improve and deliberately rehearse it.
                   </p>
 
@@ -523,13 +523,13 @@ export const TopformSite: React.FC = () => {
               <p className="text-white font-bold text-lg">
                 Sometimes it's pressure.
               </p>
-              <p className="text-zinc-300 text-[16px] sm:text-[17px] leading-relaxed">
+              <p className="text-zinc-200 text-[16px] sm:text-[17px] leading-relaxed">
                 Sometimes it's a mistake, a missed chance, a bad decision or something the referee has done.
               </p>
-              <p className="text-zinc-300 text-[16px] sm:text-[17px] leading-relaxed">
+              <p className="text-zinc-200 text-[16px] sm:text-[17px] leading-relaxed">
                 Sometimes your mind has gone to what happens if you lose the ball, whether you're going to start next week, or you're trying too hard to make something happen.
               </p>
-              <p className="text-zinc-300 text-[16px] sm:text-[17px] leading-relaxed">
+              <p className="text-zinc-200 text-[16px] sm:text-[17px] leading-relaxed">
                 And sometimes you're simply trying to consciously control parts of your game that you've spent years learning to do automatically.
               </p>
             </div>
@@ -537,42 +537,42 @@ export const TopformSite: React.FC = () => {
             {/* Clear Red / Green / Blue Separation */}
             <div className="space-y-6">
               {/* Red Brain — Monochromatic & Quiet */}
-              <div className="tf-figma-card rounded-2xl p-7 sm:p-9 space-y-4">
+              <div className="tf-figma-card rounded-2xl p-6 sm:p-9 space-y-4">
                 <h3 className="text-2xl font-bold text-white">Red Brain</h3>
-                <div className="space-y-3 text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+                <div className="space-y-3 text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
                   <p>Your Red Brain isn't something we're trying to get rid of.</p>
                   <p className="text-white font-semibold">But we don't want it in control.</p>
-                  <p className="text-zinc-300">
+                  <p className="text-zinc-200">
                     Left in control, anger can become frustration. Nerves can become anxiety. Thinking can become overthinking. Pressure can make you rush, hesitate, force things or play safe.
                   </p>
-                  <p className="text-zinc-300">
+                  <p className="text-zinc-200">
                     But those same raw ingredients can be incredibly useful when they're controlled in the right way.
                   </p>
                 </div>
               </div>
 
               {/* Green Brain — Monochromatic & Quiet */}
-              <div className="tf-figma-card rounded-2xl p-7 sm:p-9 space-y-4">
+              <div className="tf-figma-card rounded-2xl p-6 sm:p-9 space-y-4">
                 <h3 className="text-2xl font-bold text-white">Green Brain</h3>
-                <div className="space-y-3 text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+                <div className="space-y-3 text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
                   <p>This is where your Green Brain comes in.</p>
-                  <p className="text-zinc-300">
+                  <p className="text-zinc-200">
                     Your Green Brain keeps you present and puts your attention onto the things you can control.
                   </p>
-                  <p className="text-zinc-300">
+                  <p className="text-zinc-200">
                     And rather than allowing Red Brain to take over, Green Brain takes control of what Red Brain gives you.
                   </p>
-                  <div className="space-y-2 py-2 border-y border-white/[0.06] my-2 text-zinc-300 text-[15px]">
+                  <div className="space-y-2 py-2 border-y border-white/[0.06] my-2 text-zinc-200 text-[15px]">
                     <p className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-300 shrink-0" />
                       <span>Anger can become aggression and intensity.</span>
                     </p>
                     <p className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-300 shrink-0" />
                       <span>Nerves and anxiety can become sharpness, awareness and energy.</span>
                     </p>
                   </div>
-                  <p className="text-zinc-300">
+                  <p className="text-zinc-200">
                     You're not trying to become emotionless or completely calm.
                   </p>
                   <p className="text-white font-semibold">
@@ -582,17 +582,17 @@ export const TopformSite: React.FC = () => {
               </div>
 
               {/* Blue Performance State — The Arrival of Color */}
-              <div className="tf-blue-state-card rounded-2xl p-8 sm:p-11 space-y-5 relative overflow-hidden">
+              <div className="tf-blue-state-card rounded-2xl p-7 sm:p-11 space-y-5 relative overflow-hidden">
                 <h3 className="text-2xl sm:text-3xl font-bold text-[#22c5fe] tracking-tight">
                   Blue Performance State
                 </h3>
-                <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+                <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
                   When Green Brain is in control and those raw ingredients from Red Brain are working for you rather than against you, you create your <strong className="text-white font-bold">Blue Performance State</strong>.
                 </p>
                 <p className="text-white font-bold text-[16px] sm:text-[17px] leading-relaxed pt-1">
                   Your mind is clear. You're present.
                 </p>
-                <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+                <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
                   You're seeing, reacting and deciding rather than consciously trying to control your football.
                 </p>
                 <p className="text-[#22c5fe] font-black text-2xl sm:text-3xl pt-2 tracking-tight">
@@ -612,7 +612,7 @@ export const TopformSite: React.FC = () => {
           <div className="max-w-[1200px] mx-auto px-6 sm:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
               {/* Image Left */}
-              <div className="lg:col-span-5 flex justify-center lg:justify-start">
+              <div className="lg:col-span-5 flex justify-start">
                 <div className="relative overflow-hidden rounded-2xl max-w-[440px] border border-white/[0.12] shadow-2xl bg-zinc-950">
                   <img
                     src="/assets/topform-kevin-celebration.jpg"
@@ -630,7 +630,7 @@ export const TopformSite: React.FC = () => {
                   &ldquo;PLAYING CONSISTENTLY IN MY <span className="text-[#22c5fe]">BLUE PERFORMANCE STATE</span>.&rdquo;
                 </h2>
 
-                <div className="space-y-4 text-zinc-300 text-base sm:text-lg lg:text-[19px] leading-relaxed font-normal max-w-xl">
+                <div className="space-y-4 text-zinc-200 text-base sm:text-lg lg:text-[19px] leading-relaxed font-normal max-w-xl">
                   <p>
                     &ldquo;He's helped me to approach training sessions and matches by being able to bounce back quickly from mistakes and playing consistently in my Blue Performance State.&rdquo;
                   </p>
@@ -664,10 +664,10 @@ export const TopformSite: React.FC = () => {
               <p className="text-white font-semibold text-lg">
                 There's only so much physical training you can do.
               </p>
-              <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
+              <p className="text-zinc-200 text-sm sm:text-base leading-relaxed">
                 Your club controls your training load. You have matches to play, recovery to manage and a body that needs to be ready to perform.
               </p>
-              <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
+              <p className="text-zinc-200 text-sm sm:text-base leading-relaxed">
                 But that doesn't mean you have to stop working on your game.
               </p>
               <p className="text-white font-semibold text-sm sm:text-base">
@@ -684,30 +684,30 @@ export const TopformSite: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
                 {/* 01 STRIKERS */}
                 <div className="tf-figma-card rounded-2xl p-6 sm:p-8 space-y-4">
-                  <p className="text-xs text-zinc-400 font-semibold tracking-wider">
+                  <p className="text-xs text-zinc-300 font-semibold tracking-wider">
                     01  STRIKERS
                   </p>
-                  <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+                  <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
                     <strong className="text-white">If you're a striker</strong>, we might rehearse the movement you're working on with your striker coach. Attacking a particular type of cross. Creating separation from a centre-back. A 1v1 with the goalkeeper. Or what you do immediately after missing a chance.
                   </p>
                 </div>
 
                 {/* 02 MIDFIELDERS */}
                 <div className="tf-figma-card rounded-2xl p-6 sm:p-8 space-y-4">
-                  <p className="text-xs text-zinc-400 font-semibold tracking-wider">
+                  <p className="text-xs text-zinc-300 font-semibold tracking-wider">
                     02  MIDFIELDERS
                   </p>
-                  <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+                  <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
                     <strong className="text-white">If you're a midfielder</strong>, it might be scanning before you receive, recognising where the pressure is coming from, receiving on the half-turn or seeing the next pass earlier.
                   </p>
                 </div>
 
                 {/* 03 DEFENDERS */}
                 <div className="tf-figma-card rounded-2xl p-6 sm:p-8 space-y-4">
-                  <p className="text-xs text-zinc-400 font-semibold tracking-wider">
+                  <p className="text-xs text-zinc-300 font-semibold tracking-wider">
                     03  DEFENDERS
                   </p>
-                  <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+                  <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
                     <strong className="text-white">If you're a defender</strong>, it might be decision-making, breaking lines, stepping in with the ball, playing more effective diagonal passes, 1v1 defending, leadership or composure.
                   </p>
                 </div>
@@ -715,7 +715,7 @@ export const TopformSite: React.FC = () => {
 
               {/* Kicker Below Cards */}
               <div className="mt-12 text-left max-w-xl mx-auto md:max-w-none">
-                <p className="text-zinc-300 text-base sm:text-lg">
+                <p className="text-zinc-200 text-base sm:text-lg">
                   And next week it could be something completely different. <strong className="text-white font-bold">Because the work changes as your football changes.</strong>
                 </p>
               </div>
@@ -736,7 +736,7 @@ export const TopformSite: React.FC = () => {
                   &ldquo;IT&apos;S JUST LIKE<br />PRACTISING.&rdquo;
                 </h2>
 
-                <p className="text-zinc-300 text-lg sm:text-2xl leading-relaxed font-normal max-w-xl">
+                <p className="text-zinc-200 text-lg sm:text-2xl leading-relaxed font-normal max-w-xl">
                   &ldquo;When you are in that position on the pitch, it feels like you&apos;ve been there before.&rdquo;
                 </p>
 
@@ -744,14 +744,14 @@ export const TopformSite: React.FC = () => {
                   <p className="text-white font-semibold text-base sm:text-lg">
                     Bim Pepple
                   </p>
-                  <p className="text-xs text-zinc-400 font-medium tracking-wider uppercase mt-1">
+                  <p className="text-xs text-zinc-300 font-medium tracking-wider uppercase mt-1">
                     Plymouth Argyle Press Conference
                   </p>
                 </div>
               </div>
 
               {/* Right Column: Always Visible Autoplaying Video Player */}
-              <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <div className="lg:col-span-5 flex justify-start lg:justify-end">
                 <BimPeppleVideoPlayer />
               </div>
             </div>
@@ -767,7 +767,7 @@ export const TopformSite: React.FC = () => {
               <h2 className="text-white font-bold text-[clamp(2.2rem,4.5vw,3.2rem)] leading-tight mb-4">
                 Your football decides<br />what we work on.
               </h2>
-              <p className="text-zinc-300 text-base sm:text-lg">
+              <p className="text-zinc-200 text-base sm:text-lg">
                 Every time we work together, we look at what's actually happening in your football.
               </p>
             </div>
@@ -784,7 +784,7 @@ export const TopformSite: React.FC = () => {
               ))}
             </div>
 
-            <div className="space-y-4 text-left text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+            <div className="space-y-4 text-left text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
               <p className="text-white font-semibold text-lg">
                 Then we decide what will make the biggest difference to your game — and we work on it.
               </p>
@@ -813,13 +813,13 @@ export const TopformSite: React.FC = () => {
               <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
                 Your coaches are<br />working on your game.<br />So are we.
               </h3>
-              <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+              <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
                 If your striker coach is working with you on making a particular movement, we can rehearse it.
               </p>
-              <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+              <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
                 If your manager wants something different from you tactically, we can work on recognising those situations.
               </p>
-              <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+              <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
                 If you've been doing something on the training pitch that isn't quite appearing naturally in matches yet, we can work on that too.
               </p>
               <p className="text-white font-semibold text-[15px] sm:text-[16px] pt-2">
@@ -843,7 +843,7 @@ export const TopformSite: React.FC = () => {
                   AS A PLAYER.&rdquo;
                 </h2>
 
-                <p className="text-zinc-300 text-lg sm:text-xl leading-relaxed font-normal max-w-xl">
+                <p className="text-zinc-200 text-lg sm:text-xl leading-relaxed font-normal max-w-xl">
                   &ldquo;Mark and I have been working together for a few years, working on the psychological part of my game and building good habits and focus points for each game. It has definitely improved me as a player.&rdquo;
                 </p>
 
@@ -853,7 +853,7 @@ export const TopformSite: React.FC = () => {
               </div>
 
               {/* Matchday Action Photo Right */}
-              <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <div className="lg:col-span-5 flex justify-start lg:justify-end">
                 <div className="relative overflow-hidden rounded-2xl max-w-[480px] border border-white/[0.10] shadow-2xl bg-zinc-950">
                   <img
                     src="/assets/topform-emiliano-bournemouth-bw.jpg"
@@ -884,10 +884,10 @@ export const TopformSite: React.FC = () => {
               <p className="text-white font-semibold text-base sm:text-lg">
                 Every player's journey is different.
               </p>
-              <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
+              <p className="text-zinc-200 text-sm sm:text-base leading-relaxed">
                 The following players came to me at very different points in their careers, with very different challenges.
               </p>
-              <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
+              <p className="text-zinc-200 text-sm sm:text-base leading-relaxed">
                 This is where they were when we started working together — and where their careers went next.
               </p>
             </div>
@@ -899,11 +899,11 @@ export const TopformSite: React.FC = () => {
                 return (
                   <div
                     key={study.number}
-                    className={`tf-figma-card rounded-2xl p-8 sm:p-10 lg:p-12 relative overflow-hidden transition-all duration-300 hover:border-white/20 ${
+                    className={`tf-figma-card rounded-2xl p-6 sm:p-10 lg:p-12 relative overflow-hidden transition-all duration-300 hover:border-white/20 ${
                       isEven ? 'lg:ml-auto lg:max-w-[980px]' : 'lg:mr-auto lg:max-w-[980px]'
                     }`}
                   >
-                    <p className="text-xs text-zinc-400 font-bold tracking-wider mb-4">
+                    <p className="text-xs text-zinc-300 font-bold tracking-wider mb-4">
                       {study.number}
                     </p>
 
@@ -915,12 +915,12 @@ export const TopformSite: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 pt-6 border-t border-white/[0.08]">
                       {/* Left: Started */}
                       <div className="md:col-span-5 space-y-3 text-left">
-                        <p className="text-xs font-semibold text-zinc-400 uppercase tracking-[0.14em]">
+                        <p className="text-xs font-semibold text-zinc-300 uppercase tracking-[0.14em]">
                           WHEN WE STARTED WORKING TOGETHER
                         </p>
                         <div className="space-y-2.5">
                           {study.startedParagraphs.map((p, pIdx) => (
-                            <p key={pIdx} className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+                            <p key={pIdx} className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
                               {p}
                             </p>
                           ))}
@@ -928,11 +928,11 @@ export const TopformSite: React.FC = () => {
                       </div>
 
                       {/* Right: Where career went */}
-                      <div className="md:col-span-7 space-y-3 text-left md:border-l md:border-white/[0.08] md:pl-8 lg:pl-10">
-                        <p className="text-xs font-semibold text-zinc-400 uppercase tracking-[0.14em]">
+                      <div className="md:col-span-7 space-y-3 text-left border-t border-white/[0.08] pt-6 md:border-t-0 md:pt-0 md:border-l md:border-white/[0.08] md:pl-8 lg:pl-10">
+                        <p className="text-xs font-semibold text-zinc-300 uppercase tracking-[0.14em]">
                           WHERE HIS CAREER WENT
                         </p>
-                        <p className="text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+                        <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
                           {study.wentIntro}
                         </p>
                         {study.wentBullets && (
@@ -970,7 +970,7 @@ export const TopformSite: React.FC = () => {
               Why I built TOPFORM.
             </h2>
 
-            <div className="space-y-5 text-left text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+            <div className="space-y-5 text-left text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
               <p>
                 I've spent years working with professional footballers and trying to understand one thing:
               </p>
@@ -1005,7 +1005,7 @@ export const TopformSite: React.FC = () => {
                 />
                 <div>
                   <p className="text-white font-bold text-[15px]">Mark Bowden</p>
-                  <p className="text-xs text-zinc-400">Founder, TOPFORM</p>
+                  <p className="text-xs text-zinc-300">Founder, TOPFORM</p>
                 </div>
               </div>
 
@@ -1023,7 +1023,7 @@ export const TopformSite: React.FC = () => {
               You don't need to be<br />struggling to get better.
             </h2>
 
-            <div className="space-y-5 text-left text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+            <div className="space-y-5 text-left text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
               <p className="text-white font-medium">
                 TOPFORM is for professional footballers who are serious about getting everything they can from their ability — and continuing to improve it.
               </p>
@@ -1069,7 +1069,7 @@ export const TopformSite: React.FC = () => {
               Private. Bespoke.<br />Built around your football.
             </h2>
 
-            <div className="space-y-5 text-left text-zinc-300 text-[15px] sm:text-[16px] leading-relaxed">
+            <div className="space-y-5 text-left text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
               <p className="text-white font-medium">
                 I work personally with a limited number of professional footballers at any one time.
               </p>
@@ -1105,7 +1105,7 @@ export const TopformSite: React.FC = () => {
               <span className="text-white font-bold tracking-[0.14em] text-sm uppercase">
                 TOPFORM
               </span>
-              <span className="text-[10px] text-zinc-400 font-semibold tracking-[0.18em] uppercase mt-1">
+              <span className="text-[10px] text-zinc-300 font-semibold tracking-[0.18em] uppercase mt-1">
                 PLAY AT YOUR BEST. MAKE YOUR BEST BETTER.
               </span>
             </div>
@@ -1114,11 +1114,11 @@ export const TopformSite: React.FC = () => {
               How good can you become?
             </h2>
 
-            <div className="space-y-3 text-zinc-300 text-[16px] sm:text-[18px]">
+            <div className="space-y-3 text-zinc-200 text-[16px] sm:text-[18px]">
               <p>You've spent years building your game.</p>
               <p className="text-white font-semibold">There's the player you are today.</p>
               <p className="text-white font-semibold">And there's the player you can still become.</p>
-              <p className="text-zinc-300 pt-2 text-[15px] sm:text-[16px]">
+              <p className="text-zinc-200 pt-2 text-[15px] sm:text-[16px]">
                 TOPFORM is built to help you get the best from both.
               </p>
             </div>
@@ -1141,7 +1141,7 @@ export const TopformSite: React.FC = () => {
           FOOTER — Matches Figma (scan_slice_20.png)
           Full-width cyan/blue hairline accent border + brand info + contact
          ===================================================================== */}
-      <footer className="bg-[#000000] border-t border-[#0099FF] py-12 px-6 sm:px-12 text-zinc-300 text-xs">
+      <footer className="bg-[#000000] border-t border-[#0099FF] py-12 px-6 sm:px-12 text-zinc-200 text-xs">
         <div className="max-w-[1240px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3.5">
             <img
@@ -1151,13 +1151,13 @@ export const TopformSite: React.FC = () => {
             />
             <div>
               <p className="text-white font-bold tracking-[0.1em] text-sm">TOPFORM</p>
-              <p className="text-[10px] text-zinc-400 font-semibold tracking-[0.18em] uppercase">
+              <p className="text-[10px] text-zinc-300 font-semibold tracking-[0.18em] uppercase">
                 PLAY AT YOUR BEST. MAKE YOUR BEST BETTER.
               </p>
             </div>
           </div>
 
-          <div className="flex flex-col sm:items-end text-center sm:text-right gap-1.5 text-[13px] text-zinc-300 font-normal">
+          <div className="flex flex-col sm:items-end text-center sm:text-right gap-1.5 text-[13px] text-zinc-200 font-normal">
             <p className="text-white font-semibold text-[13px]">Mark Bowden</p>
             <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-2.5 gap-y-1">
               <a
@@ -1169,11 +1169,11 @@ export const TopformSite: React.FC = () => {
                 <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366] shrink-0" />
                 <span>WhatsApp: 07575 203332</span>
               </a>
-              <span className="text-zinc-600 hidden sm:inline">·</span>
+              <span className="text-zinc-400 hidden sm:inline">·</span>
               <a href="mailto:mark@topform.global" className="hover:text-white transition-colors">
                 mark@topform.global
               </a>
-              <span className="text-zinc-600 hidden sm:inline">·</span>
+              <span className="text-zinc-400 hidden sm:inline">·</span>
               <a href="https://www.topform.global" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                 www.topform.global
               </a>
@@ -1202,7 +1202,7 @@ export const TopformSite: React.FC = () => {
                 <p className="text-sm font-bold text-white">
                   {activeModalVideo.title}
                 </p>
-                <p className="text-xs text-zinc-400">
+                <p className="text-xs text-zinc-300">
                   {activeModalVideo.subtitle}
                 </p>
               </div>
@@ -1210,7 +1210,7 @@ export const TopformSite: React.FC = () => {
                 type="button"
                 aria-label="Close video modal"
                 onClick={() => setActiveModalVideo(null)}
-                className="p-1.5 rounded-lg text-zinc-400 hover:text-white transition-colors"
+                className="p-1.5 rounded-lg text-zinc-300 hover:text-white transition-colors"
               >
                 <X className="w-4 h-4" />
               </button>
