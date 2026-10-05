@@ -1006,17 +1006,6 @@ export const TopformSite: React.FC = () => {
                   >
                     <Tilt3DCard maxTilt={3} className="rounded-2xl">
                       <div className="tf-figma-card rounded-2xl p-6 sm:p-10 lg:p-12 relative overflow-hidden transition-all duration-300 hover:border-white/20">
-                        {/* Skimmable Breakthrough Transformation */}
-                        <div className="flex items-center gap-3 mb-3">
-                          <span className="text-xs text-[#22c5fe] font-bold tracking-widest">
-                            {study.number}
-                          </span>
-                          <span className="h-px w-8 bg-white/15" />
-                          <span className="text-[11px] sm:text-xs text-zinc-400 font-semibold tracking-[0.14em] uppercase">
-                            Breakthrough Transformation
-                          </span>
-                        </div>
-
                         <div className="space-y-1.5 mb-8 text-left">
                           <div className="text-zinc-400 text-xs sm:text-sm font-semibold tracking-wider uppercase">
                             {study.fromStruggle}
