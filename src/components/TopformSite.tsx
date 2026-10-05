@@ -559,7 +559,7 @@ export const TopformSite: React.FC = () => {
             Conceptual Arrival of Color: Red & Green monochromatic restraint,
             Blue Performance State is the arrival of color.
            =================================================================== */}
-        <section className="py-14 sm:py-18 bg-[#000000] border-b border-white/[0.08]">
+        <section className="pt-14 sm:pt-18 pb-6 sm:pb-18 bg-[#000000] border-b border-white/[0.08]">
           <div className="max-w-xl mx-auto px-4 text-left">
             <h2 className="text-white font-bold text-[clamp(2.2rem,4.5vw,3.2rem)] leading-tight mb-8">
               What stops your best<br />football coming out?
@@ -679,30 +679,31 @@ export const TopformSite: React.FC = () => {
         {/* ===================================================================
             04B | FABIO CARVALHO TESTIMONIAL & PROOF
             Immediately follows Red/Green/Blue content with tighter luxury spacing
+            Mobile: Side-by-side so both the photo & quote are visible in one screen
            =================================================================== */}
-        <section id="fabio-proof" className="py-12 sm:py-16 bg-[#000000] border-b border-white/[0.08] overflow-hidden">
-          <div className="max-w-[1200px] mx-auto px-6 sm:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-              {/* Image Left — Centered on mobile */}
-              <div className="lg:col-span-5 flex justify-center lg:justify-start">
-                <div className="relative overflow-hidden rounded-2xl max-w-[440px] border border-white/[0.12] shadow-2xl bg-zinc-950 mx-auto lg:mx-0">
+        <section id="fabio-proof" className="pt-6 sm:pt-16 pb-12 sm:pb-16 bg-[#000000] border-b border-white/[0.08] overflow-hidden">
+          <div className="max-w-[1200px] mx-auto px-4 sm:px-12">
+            <div className="grid grid-cols-12 gap-3.5 sm:gap-8 lg:gap-14 items-center">
+              {/* Image Left — Scaled for mobile side-by-side single-screen visibility */}
+              <div className="col-span-5 flex justify-center lg:justify-start">
+                <div className="relative overflow-hidden rounded-xl sm:rounded-2xl w-full max-w-[170px] sm:max-w-[280px] lg:max-w-[440px] aspect-[2/3] sm:aspect-auto border border-white/[0.12] shadow-2xl bg-zinc-950 mx-auto lg:mx-0">
                   <img
                     src={getAssetUrl('/assets/topform-kevin-celebration.jpg')}
                     alt="Fabio Carvalho"
-                    className="w-full h-auto block object-contain sm:object-cover filter contrast-105 brightness-100"
+                    className="w-full h-full sm:h-auto block object-cover filter contrast-105 brightness-100"
                     loading="lazy"
                   />
-                  <div className="absolute inset-x-0 bottom-0 h-8 sm:h-20 bg-gradient-to-t from-[#000000] via-[#000000]/40 to-transparent pointer-events-none" />
+                  <div className="absolute inset-x-0 bottom-0 h-6 sm:h-20 bg-gradient-to-t from-[#000000] via-[#000000]/40 to-transparent pointer-events-none" />
                 </div>
               </div>
 
               {/* Quote Right */}
-              <div className="lg:col-span-7 space-y-6 text-left">
-                <h2 className="text-white font-black tracking-tight text-[clamp(2.1rem,4.8vw,3.6rem)] uppercase leading-[1.08]">
+              <div className="col-span-7 space-y-2 sm:space-y-4 lg:space-y-6 text-left">
+                <h2 className="text-white font-black tracking-tight text-[15px] xs:text-[18px] sm:text-2xl lg:text-[clamp(2.1rem,4.8vw,3.6rem)] uppercase leading-[1.1]">
                   &ldquo;PLAYING CONSISTENTLY IN MY <span className="text-[#22c5fe]">BLUE PERFORMANCE STATE</span>.&rdquo;
                 </h2>
 
-                <div className="space-y-4 text-zinc-200 text-base sm:text-lg lg:text-[19px] leading-relaxed font-normal max-w-xl">
+                <div className="space-y-1.5 sm:space-y-4 text-zinc-200 text-[11px] xs:text-[13px] sm:text-base lg:text-[19px] leading-relaxed font-normal max-w-xl">
                   <p>
                     &ldquo;He's helped me to approach training sessions and matches by being able to bounce back quickly from mistakes and playing consistently in my Blue Performance State.&rdquo;
                   </p>
@@ -711,8 +712,8 @@ export const TopformSite: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="pt-2">
-                  <p className="text-white font-bold text-base sm:text-lg">
+                <div className="pt-0.5 sm:pt-2">
+                  <p className="text-white font-bold text-[12px] sm:text-base sm:text-lg">
                     Fabio Carvalho
                   </p>
                 </div>
