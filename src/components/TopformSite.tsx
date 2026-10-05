@@ -763,12 +763,9 @@ export const TopformSite: React.FC = () => {
                   transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
                   className="space-y-4 md:pr-8 lg:pr-10"
                 >
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
-                    <p className="text-xs text-[#22c5fe] font-bold tracking-[0.16em] uppercase">
-                      STRIKERS
-                    </p>
-                  </div>
+                  <p className="text-xs text-[#22c5fe] font-bold tracking-[0.16em] uppercase mb-2">
+                    STRIKERS
+                  </p>
                   <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
                     <strong className="text-white font-semibold">If you're a striker</strong>, we might rehearse the movement you're working on with your striker coach. Attacking a particular type of cross. Creating separation from a centre-back. A 1v1 with the goalkeeper. Or what you do immediately after missing a chance.
                   </p>
@@ -782,12 +779,9 @@ export const TopformSite: React.FC = () => {
                   transition={{ duration: 0.5, delay: 0.08, ease: [0.23, 1, 0.32, 1] }}
                   className="space-y-4 md:px-8 lg:px-10 border-t border-white/[0.08] pt-6 md:border-t-0 md:pt-0 md:border-l md:border-white/[0.08]"
                 >
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
-                    <p className="text-xs text-[#22c5fe] font-bold tracking-[0.16em] uppercase">
-                      MIDFIELDERS
-                    </p>
-                  </div>
+                  <p className="text-xs text-[#22c5fe] font-bold tracking-[0.16em] uppercase mb-2">
+                    MIDFIELDERS
+                  </p>
                   <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
                     <strong className="text-white font-semibold">If you're a midfielder</strong>, it might be scanning before you receive, recognising where the pressure is coming from, receiving on the half-turn or seeing the next pass earlier.
                   </p>
@@ -801,12 +795,9 @@ export const TopformSite: React.FC = () => {
                   transition={{ duration: 0.5, delay: 0.16, ease: [0.23, 1, 0.32, 1] }}
                   className="space-y-4 md:pl-8 lg:pl-10 border-t border-white/[0.08] pt-6 md:border-t-0 md:pt-0 md:border-l md:border-white/[0.08]"
                 >
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
-                    <p className="text-xs text-[#22c5fe] font-bold tracking-[0.16em] uppercase">
-                      DEFENDERS
-                    </p>
-                  </div>
+                  <p className="text-xs text-[#22c5fe] font-bold tracking-[0.16em] uppercase mb-2">
+                    DEFENDERS
+                  </p>
                   <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
                     <strong className="text-white font-semibold">If you're a defender</strong>, it might be decision-making, breaking lines, stepping in with the ball, playing more effective diagonal passes, 1v1 defending, leadership or composure.
                   </p>
