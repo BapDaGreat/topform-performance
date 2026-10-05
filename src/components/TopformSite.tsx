@@ -905,24 +905,25 @@ export const TopformSite: React.FC = () => {
         </section>
 
         {/* ===================================================================
-            08 | WORKING WITH YOUR COACHING — Matches Figma (scan_slice_05.png & 06.png)
+            08 | WORKING WITH YOUR COACHING — Pure Editorial Flow
+            Breaks rounded dark card fatigue with typography & vertical accent
            =================================================================== */}
         <section className="py-14 sm:py-20 bg-[#000000] border-b border-white/[0.08]">
-          <div className="max-w-[720px] mx-auto px-4">
-            <div className="tf-figma-card rounded-2xl p-8 sm:p-12 text-left space-y-5">
-              <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
-                Your coaches are<br />working on your game.<br />So are we.
-              </h3>
-              <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
+          <div className="max-w-[680px] mx-auto px-4 text-left space-y-6">
+            <h2 className="text-white font-bold text-[clamp(2.2rem,4.5vw,3.2rem)] leading-tight">
+              Your coaches are<br />working on your game.<br />So are we.
+            </h2>
+            <div className="space-y-4 text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed border-l-2 border-[#22c5fe]/50 pl-5 sm:pl-7">
+              <p>
                 If your striker coach is working with you on making a particular movement, we can rehearse it.
               </p>
-              <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
+              <p>
                 If your manager wants something different from you tactically, we can work on recognising those situations.
               </p>
-              <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
+              <p>
                 If you've been doing something on the training pitch that isn't quite appearing naturally in matches yet, we can work on that too.
               </p>
-              <p className="text-white font-semibold text-[15px] sm:text-[16px] pt-2">
+              <p className="text-white font-semibold pt-1">
                 You work on it with your coaches on the pitch. We can deliberately rehearse it off the pitch.
               </p>
             </div>
@@ -970,12 +971,11 @@ export const TopformSite: React.FC = () => {
 
         {/* ===================================================================
             10 | WHERE THEY STARTED. WHERE THEIR FOOTBALL TOOK THEM
-            Editorial Layout with dynamic visual rhythm, alternating alignment,
-            large architectural numerals, and 2-column comparative split.
+            Skimmable in 10s: Dominant Breakthrough Results with Expandable Details
            =================================================================== */}
         <section id="career-journeys" className="py-16 sm:py-22 bg-[#000000] border-b border-white/[0.08]">
           <div className="max-w-[1140px] mx-auto px-6 sm:px-10 lg:px-12">
-            <div className="text-left space-y-4 max-w-2xl mb-14 sm:mb-20">
+            <div className="text-left space-y-4 max-w-2xl mb-12 sm:mb-16">
               <h2 className="text-white font-bold text-[clamp(2.2rem,4.8vw,3.6rem)] leading-tight">
                 Where they started.<br />
                 Where their<br />
@@ -986,79 +986,91 @@ export const TopformSite: React.FC = () => {
               </p>
               <p className="text-zinc-200 text-sm sm:text-base leading-relaxed">
                 The following players came to me at very different points in their careers, with very different challenges.
-              </p>
-              <p className="text-zinc-200 text-sm sm:text-base leading-relaxed">
-                This is where they were when we started working together — and where their careers went next.
+                This is where they were when we started working together &mdash; and where their careers went next.
               </p>
             </div>
 
-            {/* Alternating Editorial Stories with Large Numerals */}
-            <div className="space-y-10 sm:space-y-12">
+            {/* Skimmable Case Study Cards */}
+            <div className="space-y-6 sm:space-y-8">
               {CASE_STUDIES.map((study, idx) => {
                 const isEven = idx % 2 === 1;
                 return (
                   <motion.div
                     key={study.number}
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-60px' }}
-                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    viewport={{ once: true, margin: '-40px' }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                     className={isEven ? 'lg:ml-auto lg:max-w-[980px]' : 'lg:mr-auto lg:max-w-[980px]'}
                   >
-                    <Tilt3DCard maxTilt={3} className="rounded-2xl">
-                      <div className="tf-figma-card rounded-2xl p-6 sm:p-10 lg:p-12 relative overflow-hidden transition-all duration-300 hover:border-white/20">
-                        <div className="space-y-1.5 mb-8 text-left">
-                          <div className="text-zinc-400 text-xs sm:text-sm font-semibold tracking-wider uppercase">
+                    <Tilt3DCard maxTilt={2} className="rounded-2xl">
+                      <div className="tf-figma-card rounded-2xl p-6 sm:p-9 lg:p-10 relative overflow-hidden transition-all duration-300 hover:border-white/20">
+                        {/* Numeral & Starting Struggle Context */}
+                        <div className="flex items-center gap-2.5 mb-2">
+                          <span className="text-xs font-mono font-bold text-[#22c5fe] tracking-widest">
+                            {study.number}
+                          </span>
+                          <span className="h-px w-6 bg-white/15" />
+                          <span className="text-[11px] sm:text-xs font-bold tracking-[0.14em] text-zinc-400 uppercase">
                             {study.fromStruggle}
-                          </div>
-                          <h3 className="text-xl sm:text-2xl lg:text-[26px] font-black text-white uppercase leading-tight tracking-tight">
-                            {study.toResult}
-                          </h3>
+                          </span>
                         </div>
 
-                        {/* Editorial 2-Column Comparative Split on Desktop */}
-                        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 pt-6 border-t border-white/[0.08]">
-                          {/* Left: Started */}
-                          <div className="md:col-span-5 space-y-3 text-left">
-                            <p className="text-xs font-semibold text-zinc-300 uppercase tracking-[0.14em]">
-                              WHEN WE STARTED WORKING TOGETHER
-                            </p>
-                            <div className="space-y-2.5">
-                              {study.startedParagraphs.map((p, pIdx) => (
-                                <p key={pIdx} className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
-                                  {p}
-                                </p>
-                              ))}
-                            </div>
-                          </div>
+                        {/* Visually Dominant Result Headline (Skimmable in 10s) */}
+                        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-black text-white uppercase leading-[1.08] tracking-tight mb-3">
+                          {study.toResult}
+                        </h3>
 
-                          {/* Right: Where career went */}
-                          <div className="md:col-span-7 space-y-3 text-left border-t border-white/[0.08] pt-6 md:border-t-0 md:pt-0 md:border-l md:border-white/[0.08] md:pl-8 lg:pl-10">
-                            <p className="text-xs font-semibold text-zinc-300 uppercase tracking-[0.14em]">
-                              WHERE HIS CAREER WENT
-                            </p>
-                            <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
-                              {study.wentIntro}
-                            </p>
-                            {study.wentBullets && (
-                              <div className="space-y-2 mt-2">
-                                {study.wentBullets.map((b) => (
-                                  <div key={b} className="flex items-center gap-2.5">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
-                                    <span className="text-[#22c5fe] text-[15px] sm:text-[16px] font-semibold">{b}</span>
-                                  </div>
+                        {/* Summary Takeaway */}
+                        <p className="text-zinc-300 text-[14px] sm:text-[15px] leading-relaxed font-normal mb-4 max-w-2xl">
+                          {study.summary}
+                        </p>
+
+                        {/* Expandable Player Journey (Secondary Supporting Detail) */}
+                        <details className="group/details border-t border-white/[0.08] pt-3.5 mt-2">
+                          <summary className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.14em] uppercase text-[#22c5fe] hover:text-white transition-colors duration-200 cursor-pointer list-none select-none py-1">
+                            <span className="group-open/details:hidden flex items-center gap-1.5">
+                              Read Player Journey <span>&darr;</span>
+                            </span>
+                            <span className="hidden group-open/details:inline-flex items-center gap-1.5">
+                              Hide Journey <span>&uarr;</span>
+                            </span>
+                          </summary>
+
+                          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 pt-5 mt-3 border-t border-white/[0.06] text-left">
+                            {/* Left: Started */}
+                            <div className="md:col-span-5 space-y-2 text-left">
+                              <p className="text-[11px] font-semibold text-zinc-400 uppercase tracking-[0.16em]">
+                                WHEN WE STARTED WORKING TOGETHER
+                              </p>
+                              <div className="space-y-2 text-zinc-300 text-[14px] sm:text-[15px] leading-relaxed">
+                                {study.startedParagraphs.map((p, pIdx) => (
+                                  <p key={pIdx}>{p}</p>
                                 ))}
                               </div>
-                            )}
-                          </div>
-                        </div>
+                            </div>
 
-                        {/* Takeaway / Summary Bar */}
-                        <div className="pt-6 mt-6 border-t border-white/[0.08]">
-                          <p className="text-white font-semibold text-[15px] sm:text-[16px] leading-relaxed">
-                            {study.summary}
-                          </p>
-                        </div>
+                            {/* Right: Where career went */}
+                            <div className="md:col-span-7 space-y-2 text-left border-t border-white/[0.08] pt-5 md:border-t-0 md:pt-0 md:border-l md:border-white/[0.08] md:pl-8 lg:pl-10">
+                              <p className="text-[11px] font-semibold text-zinc-400 uppercase tracking-[0.16em]">
+                                WHERE HIS CAREER WENT
+                              </p>
+                              <p className="text-zinc-200 text-[14px] sm:text-[15px] leading-relaxed">
+                                {study.wentIntro}
+                              </p>
+                              {study.wentBullets && (
+                                <div className="space-y-1.5 mt-2">
+                                  {study.wentBullets.map((b) => (
+                                    <div key={b} className="flex items-center gap-2">
+                                      <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
+                                      <span className="text-[#22c5fe] text-[14px] sm:text-[15px] font-semibold">{b}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </details>
                       </div>
                     </Tilt3DCard>
                   </motion.div>
