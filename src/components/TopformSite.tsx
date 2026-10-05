@@ -766,7 +766,7 @@ export const TopformSite: React.FC = () => {
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
                     <p className="text-xs text-[#22c5fe] font-bold tracking-[0.16em] uppercase">
-                      01 &mdash; STRIKERS
+                      STRIKERS
                     </p>
                   </div>
                   <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
@@ -785,7 +785,7 @@ export const TopformSite: React.FC = () => {
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
                     <p className="text-xs text-[#22c5fe] font-bold tracking-[0.16em] uppercase">
-                      02 &mdash; MIDFIELDERS
+                      MIDFIELDERS
                     </p>
                   </div>
                   <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
@@ -804,7 +804,7 @@ export const TopformSite: React.FC = () => {
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
                     <p className="text-xs text-[#22c5fe] font-bold tracking-[0.16em] uppercase">
-                      03 &mdash; DEFENDERS
+                      DEFENDERS
                     </p>
                   </div>
                   <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
