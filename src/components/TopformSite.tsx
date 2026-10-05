@@ -1115,17 +1115,12 @@ export const TopformSite: React.FC = () => {
                 Helping you play consistently at your best — while continually working to make your best even better.
               </p>
 
-              {/* Performance Coach Profile Badge */}
-              <div className="pt-6 flex items-center gap-4">
-                <img
-                  src={getAssetUrl('/assets/topform-mark-bowden.jpg')}
-                  alt="Mark Bowden"
-                  className="w-12 h-12 rounded-lg object-cover object-center grayscale contrast-105 border border-white/15 shrink-0"
-                />
-                <div>
-                  <p className="text-white font-bold text-[15px]">Mark Bowden</p>
-                  <p className="text-xs text-zinc-300">Performance Coach</p>
-                </div>
+              {/* Personal Authorship Sign-off */}
+              <div className="pt-6">
+                <p className="text-white font-bold text-lg tracking-tight">Mark Bowden</p>
+                <p className="text-xs text-zinc-400 font-semibold tracking-wider uppercase mt-0.5">
+                  Performance Coach
+                </p>
               </div>
 
               <div className="w-16 h-px bg-white/20 mt-12" />
