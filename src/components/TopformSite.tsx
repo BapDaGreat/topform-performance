@@ -913,7 +913,7 @@ export const TopformSite: React.FC = () => {
             <h2 className="text-white font-bold text-[clamp(2.2rem,4.5vw,3.2rem)] leading-tight">
               Your coaches are<br />working on your game.<br />So are we.
             </h2>
-            <div className="space-y-4 text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed border-l-2 border-[#22c5fe]/50 pl-5 sm:pl-7">
+            <div className="space-y-4 text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
               <p>
                 If your striker coach is working with you on making a particular movement, we can rehearse it.
               </p>
