@@ -22,7 +22,8 @@ const getAssetUrl = (assetPath: string): string => {
 
 interface CaseStudy {
   number: string;
-  title: string;
+  fromStruggle: string;
+  toResult: string;
   startedParagraphs: string[];
   wentIntro: string;
   wentBullets?: string[];
@@ -32,20 +33,22 @@ interface CaseStudy {
 const CASE_STUDIES: CaseStudy[] = [
   {
     number: '01',
-    title: 'RELEASED BY THREE PREMIER LEAGUE ACADEMIES. NOW PLAYING AT ONE OF EUROPE\'S ELITE CLUBS.',
+    fromStruggle: 'RELEASED BY THREE PREMIER LEAGUE ACADEMIES.',
+    toResult: "NOW PLAYING AT ONE OF EUROPE'S ELITE CLUBS.",
     startedParagraphs: [
       'He had been released by three Premier League academies and was rebuilding his career in the Championship.',
     ],
     wentIntro:
-      'He established himself as one of the outstanding young players in the Championship before moving on to one of Europe\'s elite clubs.',
+      "He established himself as one of the outstanding young players in the Championship before moving on to one of Europe's elite clubs.",
     summary:
       'From three academy releases to the highest levels of European football.',
   },
   {
     number: '02',
-    title: 'ZERO GAME TIME IN JANUARY. PLAYER OF THE YEAR BY MAY.',
+    fromStruggle: 'ZERO GAME TIME IN JANUARY.',
+    toResult: 'PLAYER OF THE YEAR BY MAY.',
     startedParagraphs: [
-      'Halfway through the season, he was at a Championship club and hadn\'t played a single minute.',
+      "Halfway through the season, he was at a Championship club and hadn't played a single minute.",
       'His confidence was at rock bottom.',
       'We started working together in January.',
     ],
@@ -56,10 +59,10 @@ const CASE_STUDIES: CaseStudy[] = [
   },
   {
     number: '03',
-    title:
-      'CONSIDERING QUITTING FOOTBALL. TWO SEASONS LATER: PREMIER LEAGUE & FULL INTERNATIONAL.',
+    fromStruggle: 'CONSIDERING QUITTING FOOTBALL.',
+    toResult: 'TWO SEASONS LATER: PREMIER LEAGUE & FULL INTERNATIONAL.',
     startedParagraphs: [
-      'His career wasn\'t going where he\'d hoped.',
+      "His career wasn't going where he'd hoped.",
       'He was facing the prospect of dropping into League Two and was seriously considering walking away from football altogether.',
     ],
     wentIntro: 'Two seasons later, he had become:',
@@ -69,11 +72,11 @@ const CASE_STUDIES: CaseStudy[] = [
   },
   {
     number: '04',
-    title:
-      'SIX MONTHS WITHOUT A GAME. THEN A MULTI-MILLION-POUND PREMIER LEAGUE MOVE.',
+    fromStruggle: 'SIX MONTHS WITHOUT A GAME.',
+    toResult: 'THEN A MULTI-MILLION-POUND PREMIER LEAGUE MOVE.',
     startedParagraphs: [
-      'He had joined a League One club but couldn\'t get into the team.',
-      'For the first six months, he didn\'t play a single game.',
+      "He had joined a League One club but couldn't get into the team.",
+      "For the first six months, he didn't play a single game.",
     ],
     wentIntro:
       'By the end of the following season, his performances had earned him a move to the Premier League for a multi-million-pound fee.',
@@ -290,10 +293,10 @@ export const TopformSite: React.FC = () => {
               className="w-8 h-8 sm:w-9 sm:h-9 object-contain shrink-0"
             />
             <div className="flex flex-col min-w-0">
-              <span className="text-white font-bold tracking-[0.14em] text-[14px] sm:text-base leading-none">
-                TOPFORM
+              <span className="text-white font-bold tracking-[0.14em] text-[13px] sm:text-sm leading-none uppercase">
+                MARK BOWDEN <span className="text-zinc-500 font-normal">|</span> TOPFORM
               </span>
-              <span className="hidden sm:block text-[10px] text-zinc-300 font-semibold tracking-[0.18em] uppercase mt-1 truncate">
+              <span className="hidden sm:block text-[9px] sm:text-[10px] text-zinc-400 font-semibold tracking-[0.18em] uppercase mt-1 truncate">
                 PLAY AT YOUR BEST. MAKE YOUR BEST BETTER.
               </span>
             </div>
@@ -314,9 +317,9 @@ export const TopformSite: React.FC = () => {
       <main id="top">
         {/* ===================================================================
             01 | HERO — Premium Editorial Black-Led Direction
-            Wide floodlit players banner across top + crisp solid white headline & CTA
+            Montage ➔ Headline ➔ Proposition & Service ➔ Primary CTA ➔ Reiss Social Proof
            =================================================================== */}
-        <section className="relative bg-[#000000] text-white pt-0 pb-24 sm:pb-32 overflow-hidden border-b border-white/[0.08]">
+        <section className="relative bg-[#000000] text-white pt-0 pb-18 sm:pb-22 overflow-hidden border-b border-white/[0.08]">
           {/* Full-bleed monochrome picture expanding to fill the screen without cropping */}
           <div className="w-full relative overflow-hidden">
             <img
@@ -329,8 +332,8 @@ export const TopformSite: React.FC = () => {
             <div className="absolute inset-x-0 bottom-0 h-16 sm:h-36 md:h-56 bg-gradient-to-t from-[#000000] via-[#000000]/60 to-transparent pointer-events-none" />
           </div>
 
-          {/* Centered Editorial Hero Content Block — Pure Typography & Restraint */}
-          <div className="max-w-[680px] mx-auto px-4 pt-8 sm:pt-12 text-left relative z-10">
+          {/* Centered Editorial Hero Content Block — Pure Typography & Immediate Proposition */}
+          <div className="max-w-[720px] mx-auto px-4 pt-8 sm:pt-12 text-left relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
@@ -342,11 +345,18 @@ export const TopformSite: React.FC = () => {
                 Make your best<br />
                 even better.
               </h1>
+
+              <p className="text-zinc-200 text-[16px] sm:text-[18px] leading-relaxed mt-5 max-w-xl">
+                Private 1-to-1 performance coaching and bespoke Off-Pitch Training for professional footballers.
+              </p>
+
+              <div className="mt-7 mb-10">
+                <WorkWithMarkButton layout="stacked-left" label="Message Mark on WhatsApp" />
+              </div>
             </motion.div>
 
-            {/* Reiss Nelson Testimonial Feature — Quiet, Tactile Panel with 3D Tilt */}
+            {/* Reiss Nelson Testimonial Feature — Social Proof directly following proposition & CTA */}
             <motion.div
-              className="my-10"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
@@ -376,14 +386,6 @@ export const TopformSite: React.FC = () => {
                 </div>
               </Tilt3DCard>
             </motion.div>
-
-            <p className="text-zinc-200 text-[16px] sm:text-[18px] leading-relaxed mt-6">
-              Private 1-to-1 performance coaching and bespoke Off-Pitch Training for professional footballers.
-            </p>
-
-            <div className="mt-8">
-              <WorkWithMarkButton layout="inline" />
-            </div>
           </div>
         </section>
 
@@ -391,7 +393,7 @@ export const TopformSite: React.FC = () => {
             02 | THE CORE IDEA — Quieter Black-and-White Visual System
             Staggered 01 & 02 Dark Matte Panels without loud glowing rings
            =================================================================== */}
-        <section id="core-idea" className="py-24 sm:py-32 bg-[#000000] border-b border-white/[0.08] relative">
+        <section id="core-idea" className="py-16 sm:py-24 bg-[#000000] border-b border-white/[0.08] relative">
           <div className="max-w-[1100px] mx-auto px-4 sm:px-8">
             <div className="text-left mb-16 sm:mb-20">
               <h2 className="text-white font-bold tracking-tight text-[clamp(2.2rem,4.5vw,3.5rem)] leading-[1.1]">
@@ -469,7 +471,7 @@ export const TopformSite: React.FC = () => {
             Left: Full portrait bounded to match the text height, non-overlapping
             Right: Editorial copy
            =================================================================== */}
-        <section id="performance" className="py-20 sm:py-28 lg:py-32 bg-[#000000] border-b border-white/[0.08] overflow-hidden">
+        <section id="performance" className="py-14 sm:py-20 lg:py-24 bg-[#000000] border-b border-white/[0.08] overflow-hidden">
           <div className="max-w-[1240px] mx-auto px-6 sm:px-10 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-16 items-stretch">
               {/* Left Column: Player Portrait uncropped on mobile, centered */}
@@ -557,7 +559,7 @@ export const TopformSite: React.FC = () => {
             Conceptual Arrival of Color: Red & Green monochromatic restraint,
             Blue Performance State is the arrival of color.
            =================================================================== */}
-        <section className="py-24 sm:py-32 bg-[#000000] border-b border-white/[0.08]">
+        <section className="py-14 sm:py-18 bg-[#000000] border-b border-white/[0.08]">
           <div className="max-w-xl mx-auto px-4 text-left">
             <h2 className="text-white font-bold text-[clamp(2.2rem,4.5vw,3.2rem)] leading-tight mb-8">
               What stops your best<br />football coming out?
@@ -676,10 +678,9 @@ export const TopformSite: React.FC = () => {
 
         {/* ===================================================================
             04B | FABIO CARVALHO TESTIMONIAL & PROOF
-            Immediately follows Red/Green/Blue content.
-            Monochrome image on one side and large quote treatment on the other.
+            Immediately follows Red/Green/Blue content with tighter luxury spacing
            =================================================================== */}
-        <section id="fabio-proof" className="py-24 sm:py-32 bg-[#000000] border-b border-white/[0.08] overflow-hidden">
+        <section id="fabio-proof" className="py-12 sm:py-16 bg-[#000000] border-b border-white/[0.08] overflow-hidden">
           <div className="max-w-[1200px] mx-auto px-6 sm:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
               {/* Image Left — Centered on mobile */}
@@ -722,9 +723,9 @@ export const TopformSite: React.FC = () => {
 
         {/* ===================================================================
             05 | BESPOKE OFF-PITCH TRAINING (Positions)
-            Matches Figma (above_gap3_2.png, above_gap3_3.png, scan_slice_01.png)
+            Editorial typography & hairline dividers (breaks rounded box fatigue)
            =================================================================== */}
-        <section id="off-pitch-training" className="py-24 sm:py-32 bg-[#000000] border-b border-white/[0.08]">
+        <section id="off-pitch-training" className="py-16 sm:py-22 bg-[#000000] border-b border-white/[0.08]">
           <div className="max-w-[1100px] mx-auto px-4 sm:px-8 space-y-12">
             <div className="text-left max-w-xl mx-auto space-y-6">
               <h2 className="text-white font-bold text-[clamp(2.2rem,4.5vw,3.2rem)] leading-tight">
@@ -751,63 +752,63 @@ export const TopformSite: React.FC = () => {
                 Your position. Your game. Your situations.
               </h3>
 
-              {/* 3 Horizontal Cards Side by Side with 3D Tilt */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+              {/* Editorial 3-Column Split with Subtle Hairline Dividers (Breaks Card Fatigue) */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 pt-4">
                 {/* 01 STRIKERS */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-30px' }}
                   transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+                  className="space-y-4 md:pr-8 lg:pr-10"
                 >
-                  <Tilt3DCard maxTilt={6}>
-                    <div className="tf-figma-card rounded-2xl p-6 sm:p-8 space-y-4 h-full hover:border-white/20">
-                      <p className="text-xs text-zinc-300 font-semibold tracking-wider">
-                        01  STRIKERS
-                      </p>
-                      <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
-                        <strong className="text-white">If you're a striker</strong>, we might rehearse the movement you're working on with your striker coach. Attacking a particular type of cross. Creating separation from a centre-back. A 1v1 with the goalkeeper. Or what you do immediately after missing a chance.
-                      </p>
-                    </div>
-                  </Tilt3DCard>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
+                    <p className="text-xs text-[#22c5fe] font-bold tracking-[0.16em] uppercase">
+                      01 &mdash; STRIKERS
+                    </p>
+                  </div>
+                  <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
+                    <strong className="text-white font-semibold">If you're a striker</strong>, we might rehearse the movement you're working on with your striker coach. Attacking a particular type of cross. Creating separation from a centre-back. A 1v1 with the goalkeeper. Or what you do immediately after missing a chance.
+                  </p>
                 </motion.div>
 
                 {/* 02 MIDFIELDERS */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-30px' }}
                   transition={{ duration: 0.5, delay: 0.08, ease: [0.23, 1, 0.32, 1] }}
+                  className="space-y-4 md:px-8 lg:px-10 border-t border-white/[0.08] pt-6 md:border-t-0 md:pt-0 md:border-l md:border-white/[0.08]"
                 >
-                  <Tilt3DCard maxTilt={6}>
-                    <div className="tf-figma-card rounded-2xl p-6 sm:p-8 space-y-4 h-full hover:border-white/20">
-                      <p className="text-xs text-zinc-300 font-semibold tracking-wider">
-                        02  MIDFIELDERS
-                      </p>
-                      <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
-                        <strong className="text-white">If you're a midfielder</strong>, it might be scanning before you receive, recognising where the pressure is coming from, receiving on the half-turn or seeing the next pass earlier.
-                      </p>
-                    </div>
-                  </Tilt3DCard>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
+                    <p className="text-xs text-[#22c5fe] font-bold tracking-[0.16em] uppercase">
+                      02 &mdash; MIDFIELDERS
+                    </p>
+                  </div>
+                  <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
+                    <strong className="text-white font-semibold">If you're a midfielder</strong>, it might be scanning before you receive, recognising where the pressure is coming from, receiving on the half-turn or seeing the next pass earlier.
+                  </p>
                 </motion.div>
 
                 {/* 03 DEFENDERS */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-30px' }}
                   transition={{ duration: 0.5, delay: 0.16, ease: [0.23, 1, 0.32, 1] }}
+                  className="space-y-4 md:pl-8 lg:pl-10 border-t border-white/[0.08] pt-6 md:border-t-0 md:pt-0 md:border-l md:border-white/[0.08]"
                 >
-                  <Tilt3DCard maxTilt={6}>
-                    <div className="tf-figma-card rounded-2xl p-6 sm:p-8 space-y-4 h-full hover:border-white/20">
-                      <p className="text-xs text-zinc-300 font-semibold tracking-wider">
-                        03  DEFENDERS
-                      </p>
-                      <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
-                        <strong className="text-white">If you're a defender</strong>, it might be decision-making, breaking lines, stepping in with the ball, playing more effective diagonal passes, 1v1 defending, leadership or composure.
-                      </p>
-                    </div>
-                  </Tilt3DCard>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#22c5fe] shrink-0" />
+                    <p className="text-xs text-[#22c5fe] font-bold tracking-[0.16em] uppercase">
+                      03 &mdash; DEFENDERS
+                    </p>
+                  </div>
+                  <p className="text-zinc-200 text-[15px] sm:text-[16px] leading-relaxed">
+                    <strong className="text-white font-semibold">If you're a defender</strong>, it might be decision-making, breaking lines, stepping in with the ball, playing more effective diagonal passes, 1v1 defending, leadership or composure.
+                  </p>
                 </motion.div>
               </div>
 
@@ -825,7 +826,7 @@ export const TopformSite: React.FC = () => {
             06 | BIM PEPPLE TESTIMONIAL — Video Player on Right Side
             Playable, always seen on the right, and automatically autoplays when scrolled into view
            =================================================================== */}
-        <section id="bim-proof" className="py-24 sm:py-32 bg-[#000000] border-b border-white/[0.08] overflow-hidden">
+        <section id="bim-proof" className="py-14 sm:py-20 bg-[#000000] border-b border-white/[0.08] overflow-hidden">
           <div className="max-w-[1200px] mx-auto px-6 sm:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
               {/* Left Column: Quote & Proof */}
@@ -859,7 +860,7 @@ export const TopformSite: React.FC = () => {
         {/* ===================================================================
             07 | YOUR FOOTBALL DECIDES WHAT WE WORK ON — Matches Figma (scan_slice_04.png)
            =================================================================== */}
-        <section className="py-24 sm:py-32 bg-[#000000] border-b border-white/[0.08]">
+        <section className="py-14 sm:py-20 bg-[#000000] border-b border-white/[0.08]">
           <div className="max-w-[680px] mx-auto px-4 text-left space-y-8">
             <div>
               <h2 className="text-white font-bold text-[clamp(2.2rem,4.5vw,3.2rem)] leading-tight mb-4">
@@ -905,7 +906,7 @@ export const TopformSite: React.FC = () => {
         {/* ===================================================================
             08 | WORKING WITH YOUR COACHING — Matches Figma (scan_slice_05.png & 06.png)
            =================================================================== */}
-        <section className="py-24 sm:py-32 bg-[#000000] border-b border-white/[0.08]">
+        <section className="py-14 sm:py-20 bg-[#000000] border-b border-white/[0.08]">
           <div className="max-w-[720px] mx-auto px-4">
             <div className="tf-figma-card rounded-2xl p-8 sm:p-12 text-left space-y-5">
               <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
@@ -930,7 +931,7 @@ export const TopformSite: React.FC = () => {
         {/* ===================================================================
             09 | EMILIANO MARCONDES TESTIMONIAL — Matches Figma (scan_slice_07.png)
            =================================================================== */}
-        <section id="emiliano-proof" className="py-24 sm:py-32 bg-[#000000] border-b border-white/[0.08] overflow-hidden">
+        <section id="emiliano-proof" className="py-14 sm:py-20 bg-[#000000] border-b border-white/[0.08] overflow-hidden">
           <div className="max-w-[1200px] mx-auto px-6 sm:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               {/* Quote Left */}
@@ -971,7 +972,7 @@ export const TopformSite: React.FC = () => {
             Editorial Layout with dynamic visual rhythm, alternating alignment,
             large architectural numerals, and 2-column comparative split.
            =================================================================== */}
-        <section id="career-journeys" className="py-24 sm:py-32 bg-[#000000] border-b border-white/[0.08]">
+        <section id="career-journeys" className="py-16 sm:py-22 bg-[#000000] border-b border-white/[0.08]">
           <div className="max-w-[1140px] mx-auto px-6 sm:px-10 lg:px-12">
             <div className="text-left space-y-4 max-w-2xl mb-14 sm:mb-20">
               <h2 className="text-white font-bold text-[clamp(2.2rem,4.8vw,3.6rem)] leading-tight">
@@ -1005,13 +1006,25 @@ export const TopformSite: React.FC = () => {
                   >
                     <Tilt3DCard maxTilt={3} className="rounded-2xl">
                       <div className="tf-figma-card rounded-2xl p-6 sm:p-10 lg:p-12 relative overflow-hidden transition-all duration-300 hover:border-white/20">
-                        <p className="text-xs text-zinc-300 font-bold tracking-wider mb-4">
-                          {study.number}
-                        </p>
+                        {/* Skimmable Breakthrough Transformation */}
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="text-xs text-[#22c5fe] font-bold tracking-widest">
+                            {study.number}
+                          </span>
+                          <span className="h-px w-8 bg-white/15" />
+                          <span className="text-[11px] sm:text-xs text-zinc-400 font-semibold tracking-[0.14em] uppercase">
+                            Breakthrough Transformation
+                          </span>
+                        </div>
 
-                        <h3 className="text-xl sm:text-2xl lg:text-[25px] font-bold text-white uppercase leading-snug tracking-tight mb-8">
-                          {study.title}
-                        </h3>
+                        <div className="space-y-1.5 mb-8 text-left">
+                          <div className="text-zinc-400 text-xs sm:text-sm font-semibold tracking-wider uppercase">
+                            {study.fromStruggle}
+                          </div>
+                          <h3 className="text-xl sm:text-2xl lg:text-[26px] font-black text-white uppercase leading-tight tracking-tight">
+                            {study.toResult}
+                          </h3>
+                        </div>
 
                         {/* Editorial 2-Column Comparative Split on Desktop */}
                         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 pt-6 border-t border-white/[0.08]">
@@ -1068,7 +1081,7 @@ export const TopformSite: React.FC = () => {
         {/* ===================================================================
             11 | WHY I BUILT TOPFORM — Matches Figma (scan_slice_15.png)
            =================================================================== */}
-        <section id="why-topform" className="py-24 sm:py-32 bg-[#000000] border-b border-white/[0.08]">
+        <section id="why-topform" className="py-14 sm:py-20 bg-[#000000] border-b border-white/[0.08]">
           <div className="max-w-[680px] mx-auto px-4 text-left space-y-8">
             <h2 className="text-white font-bold text-[clamp(2.2rem,4.5vw,3.2rem)] leading-tight">
               Why I built TOPFORM.
@@ -1100,7 +1113,7 @@ export const TopformSite: React.FC = () => {
                 Helping you play consistently at your best — while continually working to make your best even better.
               </p>
 
-              {/* Founder Profile Badge (scan_slice_15.png) */}
+              {/* Performance Coach Profile Badge */}
               <div className="pt-6 flex items-center gap-4">
                 <img
                   src={getAssetUrl('/assets/topform-mark-bowden.jpg')}
@@ -1109,7 +1122,7 @@ export const TopformSite: React.FC = () => {
                 />
                 <div>
                   <p className="text-white font-bold text-[15px]">Mark Bowden</p>
-                  <p className="text-xs text-zinc-300">Founder, TOPFORM</p>
+                  <p className="text-xs text-zinc-300">Performance Coach</p>
                 </div>
               </div>
 
@@ -1121,7 +1134,7 @@ export const TopformSite: React.FC = () => {
         {/* ===================================================================
             12 | YOU DON'T NEED TO BE STRUGGLING — Matches Figma (scan_slice_16.png)
            =================================================================== */}
-        <section className="py-24 sm:py-32 bg-[#000000] border-b border-white/[0.08]">
+        <section className="py-14 sm:py-20 bg-[#000000] border-b border-white/[0.08]">
           <div className="max-w-[680px] mx-auto px-4 text-left space-y-8">
             <h2 className="text-white font-bold text-[clamp(2.2rem,4.5vw,3.2rem)] leading-tight">
               You don't need to be<br />struggling to get better.
@@ -1167,7 +1180,7 @@ export const TopformSite: React.FC = () => {
         {/* ===================================================================
             13 | PRIVATE 1-TO-1 COACHING — Matches Figma (scan_slice_18.png)
            =================================================================== */}
-        <section className="py-24 sm:py-32 bg-[#000000] border-b border-white/[0.08]">
+        <section className="py-14 sm:py-20 bg-[#000000] border-b border-white/[0.08]">
           <div className="max-w-[680px] mx-auto px-4 text-left space-y-8">
             <h2 className="text-white font-bold text-[clamp(2.2rem,4.5vw,3.2rem)] leading-tight">
               Private. Bespoke.<br />Built around your football.
@@ -1197,7 +1210,7 @@ export const TopformSite: React.FC = () => {
         {/* ===================================================================
             14 | FINAL CLOSE — Matches Figma (scan_slice_19.png & 20.png)
            =================================================================== */}
-        <section className="py-28 sm:py-36 bg-[#000000] text-center">
+        <section className="py-20 sm:py-26 bg-[#000000] text-center">
           <div className="max-w-2xl mx-auto px-4 space-y-8">
             {/* Centered Brand Roundel Logo */}
             <div className="flex flex-col items-center">
@@ -1207,7 +1220,7 @@ export const TopformSite: React.FC = () => {
                 className="w-14 h-14 object-contain mb-3"
               />
               <span className="text-white font-bold tracking-[0.14em] text-sm uppercase">
-                TOPFORM
+                MARK BOWDEN <span className="text-zinc-500 font-normal">|</span> TOPFORM
               </span>
               <span className="text-[10px] text-zinc-300 font-semibold tracking-[0.18em] uppercase mt-1">
                 PLAY AT YOUR BEST. MAKE YOUR BEST BETTER.
@@ -1254,15 +1267,17 @@ export const TopformSite: React.FC = () => {
               className="w-8 h-8 object-contain"
             />
             <div>
-              <p className="text-white font-bold tracking-[0.1em] text-sm">TOPFORM</p>
-              <p className="text-[10px] text-zinc-300 font-semibold tracking-[0.18em] uppercase">
+              <p className="text-white font-bold tracking-[0.14em] text-sm uppercase">
+                MARK BOWDEN <span className="text-zinc-500 font-normal">|</span> TOPFORM
+              </p>
+              <p className="text-[10px] text-zinc-300 font-semibold tracking-[0.18em] uppercase mt-0.5">
                 PLAY AT YOUR BEST. MAKE YOUR BEST BETTER.
               </p>
             </div>
           </div>
 
           <div className="flex flex-col sm:items-end text-center sm:text-right gap-1.5 text-[13px] text-zinc-200 font-normal">
-            <p className="text-white font-semibold text-[13px]">Mark Bowden</p>
+            <p className="text-white font-semibold text-[13px]">Private 1-to-1 Performance Coaching</p>
             <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-2.5 gap-y-1">
               <a
                 href={WHATSAPP_URL}
